@@ -1,10 +1,18 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddUserComponent } from './add-user/add-user.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './profile/profile.component';
+
+
 
 const routes: Routes = [
-  {path:"",component: AddUserComponent}
-];
+  {path:"dashboard",component:DashboardComponent,
+  children: [
+    { path:"profile", component : ProfileComponent }
+  ]
+}
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

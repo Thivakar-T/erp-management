@@ -13,15 +13,24 @@ import { AccountRoutingModule } from './account/account-routing.module';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { PagesRoutingModule } from './pages/pages-routing.module';
 import{PagesModule}from './pages/pages.module'
+import { TableComponent } from './table/table.component';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { LayoutModule } from 'src/layout/layout.module';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
+    TableComponent,
     InvoiceComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    PagesModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
     NgxSpinnerModule,
@@ -29,7 +38,11 @@ import{PagesModule}from './pages/pages.module'
     AccountModule,
     AccountRoutingModule ,
     PagesRoutingModule ,
-    PagesModule
+    PagesModule,
+   
+    ReactiveFormsModule,
+    FormsModule,
+    LayoutModule
 
   ],
   providers: [],
