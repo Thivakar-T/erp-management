@@ -11,10 +11,18 @@ import { MaterialsModule } from 'src/materials/materials.module';
 import { AccountModule } from './account/account.module';
 import { AccountRoutingModule } from './account/account-routing.module';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { TableComponent } from './table/table.component';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { LayoutModule } from 'src/layout/layout.module';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
+    TableComponent,
     InvoiceComponent
+
   ],
   imports: [
     BrowserModule,
@@ -25,7 +33,11 @@ import { InvoiceComponent } from './invoice/invoice.component';
     NgxSpinnerModule,
     MaterialsModule,
     AccountModule,
-    AccountRoutingModule 
+    AccountRoutingModule, 
+    ReactiveFormsModule,
+    FormsModule,
+    LayoutModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
