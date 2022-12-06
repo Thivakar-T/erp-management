@@ -8,9 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { MaterialsModule } from 'src/materials/materials.module';
+import { AccountModule } from './account/account.module';
+import { AccountRoutingModule } from './account/account-routing.module';
+import { InvoiceComponent } from './invoice/invoice.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +23,9 @@ import { MaterialsModule } from 'src/materials/materials.module';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
     NgxSpinnerModule,
-    MaterialsModule
+    MaterialsModule,
+    AccountModule,
+    AccountRoutingModule 
   ],
   providers: [],
   bootstrap: [AppComponent],
