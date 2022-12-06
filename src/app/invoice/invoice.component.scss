@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Noto+Serif+Khojki&family=Poppins&family=Tiro+Tamil&display=swap');
+
+
+*{
+    font-family: 'Merriweather', serif;
+}
+.invoice{
+    color: rgb(15, 77, 116);
+    font-size: 20px;
+
+}
+tr{
+    height: 40px;
+    background-color: rgb(227, 231, 233);
+  
+}
+table{
+    border:3px solid white ;
+}
+th{
+   background-color:rgb(12, 39, 54);
+   font-size: small;
+}
+.nav{
+    background-color:rgb(12, 39, 54);
+}
+.foo{
+    background-color:rgb(12, 39, 54);
+    width:auto;
+    border: 1px;
+    height: 50px;
+}
