@@ -14,7 +14,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { TableComponent } from './table/table.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { LayoutModule } from 'src/layout/layout.module';
-
+import { PagesModule } from './pages/pages.module';
 
 
 @NgModule({
@@ -28,6 +28,7 @@ import { LayoutModule } from 'src/layout/layout.module';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    PagesModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
     NgxSpinnerModule,
