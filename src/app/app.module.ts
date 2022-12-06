@@ -11,6 +11,8 @@ import { MaterialsModule } from 'src/materials/materials.module';
 import { AccountModule } from './account/account.module';
 import { AccountRoutingModule } from './account/account-routing.module';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { PagesRoutingModule } from './pages/pages-routing.module';
+import{PagesModule}from './pages/pages.module'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,10 @@ import { InvoiceComponent } from './invoice/invoice.component';
     NgxSpinnerModule,
     MaterialsModule,
     AccountModule,
-    AccountRoutingModule 
+    AccountRoutingModule ,
+    PagesRoutingModule ,
+    PagesModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
