@@ -1,0 +1,174 @@
+* {
+    
+  font-family: 'Poppins', sans-serif;
+}
+#last{
+  
+  font-size:14px;
+  color: rgb(130, 43, 223);
+ }
+
+ .last{
+  
+  color: rgb(87, 42, 159);
+  font-size: 15px;
+ }
+ .last2{
+  font-size:17px;
+  color: rgb(87, 42, 159);
+ }
+ .mat-form-field{
+  width:100%;
+ }
+ .last3{
+  
+  background-image:linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+}
+ .info{
+  color: rgb(87, 42, 159);
+  font-size: 14px;
+ }
+
+// .example-form-field {
+//   margin-right: 20px;
+// }
+// .upload-btn-wrapper {
+//   position: relative;
+//   overflow: hidden;
+//   display: inline-block;
+// }
+
+.myapp-no-padding-dialog .mat-dialog-container {
+padding: 0;
+}
+
+
+// .btn {
+//   border: 2px solid gray;
+//   color: gray;
+//   background-color: white;
+//   padding: 8px 20px;
+//   border-radius: 8px;
+//   font-size: 20px;
+//   font-weight: bold;
+// }
+
+// .upload-btn-wrapper input[type=file] {
+//   font-size: 100px;
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   opacity: 0;
+// }
+
+
+.custom-file-button input[type=file] {
+margin-left: -2px !important;
+
+border-radius:8px;
+}
+
+.custom-file-button input[type=file]::-webkit-file-upload-button {
+display: none;
+
+}
+
+.custom-file-button input[type=file]::file-selector-button {
+display: none;
+
+}
+
+.custom-file-button:hover label {
+background-color: #780b78;
+cursor: pointer;
+color: aliceblue;
+
+border-radius: 20px;
+}
+.custom-file-button {
+
+background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+
+border-radius: 20px;
+}
+.radio-container {
+display: inline-block;
+position: relative;
+padding-left: 30px;
+margin-right: 12px;
+cursor: pointer;
+font-size: 16px;
+line-height: 24px;
+input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  &:checked ~ .checkmark {
+    border: 1px solid #ce30c6;
+    background: #b317a3;
+    &:after {
+      display: block;
+    }
+  }
+  &[disabled] ~ .checkmark {
+    background: #c8c8c8;
+    border: none;
+    cursor: not-allowed;
+  }
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  border: 1px solid #c8c8c8;
+  border-radius: 50%;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 2px;
+    width: 5px;
+    height: 12px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+&:hover input ~ .checkmark {
+  border-color: #a42495;
+}
+
+}
+
+
+.field{
+  width: 100%;
+}
+.btn1{
+  background-color: rgb(51, 20, 95);
+
+}
+.btn2{
+  background-color: rgb(232, 21, 21);
+}
+
+.alink {
+  text-decoration: none;
+  color: rgb(0, 0, 139);
+}
+
+.headercard {
+  border: none;
+  border-radius:10px;
+}
+
+.headcolr{
+  color: rgb(87,42,159);
+}

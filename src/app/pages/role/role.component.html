@@ -1,0 +1,79 @@
+<div class="container mt-0 pt-0">
+  <div class="card mx-3 mt-2 headercard shadow">
+    <div class="row  mx-2 p-3 ">
+      <div class="col-lg-7 col-md-10 mx-0">
+        <h4 class="my-auto headcolr"> <b> ROLE</b></h4>
+      </div>
+      <div class="col-lg-5 col-md-10 my-auto text-lg-right text-sm-left text-sm-left">
+        <a class="mx-2 alink" href="#">
+          <small>Dashboard</small></a>|
+        <a class="mx-2 alink" href="#"> <small> role
+          </small></a>|
+        <a class="alink" href="#"><small>Role Managament</small></a>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5 d-flex mx-4 px-3">
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <p class="last2"> <b>Role </b></p>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 text-end mb-3">
+      <button class="btn btn1 fs-6 mx-2 text-white " type="button" routerLink="./../add-student"> SAVE
+      </button>
+      <button class="btn btn2 last4 fs-6  text-white " type="button" routerLink="./../add-student"> CANCEL
+      </button>
+    </div>
+  </div>
+
+  <div class="card shadow mx-3 headercard">
+    <div class="col-12 mx-2">
+      <h5 class="my-3 headcolr" style="font-weight: 400;">Role</h5>
+
+    </div>
+
+    <div class="mx-3">
+      <form [formGroup]="roleForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+            <mat-form-field appearance="fill" class="example-full-width field">
+              <mat-label class="info">Name</mat-label>
+              <input matInput formControlName="name" required
+                [ngClass]="{ 'is-invalid': Submitted && f['name'].errors || f['name'].touched&& f['name'].errors }">
+              <mat-error *ngIf="Submitted && f['name'].errors|| f['name'].touched&& f['name'].errors">
+                Please Enter Your Name</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+            <mat-form-field appearance="fill" class="example-full-width field">
+              <mat-label class="info">Description</mat-label>
+              <input matInput formControlName="description" required
+                [ngClass]="{ 'is-invalid': Submitted && f['description'].errors || f['description'].touched&& f['description'].errors }">
+              <mat-error
+                *ngIf="Submitted && f['description'].errors|| f['description'].touched&& f['description'].errors">
+                Please Enter Your Description</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+            <mat-form-field appearance="fill" class="example-full-width field">
+              <mat-label class="info">Status</mat-label>
+              <input matInput formControlName="status" required
+                [ngClass]="{ 'is-invalid': Submitted && f['status'].errors || f['status'].touched&& f['status'].errors }">
+              <mat-error *ngIf="Submitted && f['status'].errors|| f['status'].touched&& f['status'].errors">
+                Please Enter Your Status</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+      </form>
+      <div class="col-sm-23 col-md-13 col-lg-13 col-xl-14 text-end mb-5">
+
+        <button class="btn btn3 fs-6 mx-2 text-white " type="button" routerLink="./../add-student"> SUBMIT
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
