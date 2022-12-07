@@ -1,0 +1,81 @@
+<div class="container mt-0 pt-0">
+    <div class="card mx-3 mt-2 headercard shadow">
+        <div class="row  mx-2 p-3 ">
+            <div class="col-lg-7 col-md-10 mx-0">
+                <h4 class="my-auto headcolr"> <b> Inventory Managament</b></h4>
+            </div>
+            <div class="col-lg-5 col-md-10 my-auto text-lg-right text-sm-left text-sm-left">
+                <a class="mx-2 alink" href="#">
+                    <small>Dashboard</small></a>|
+                <a class="mx-2 alink" href="#"> <small> vendor
+                    </small></a>|
+                <a class="alink" href="#"><small>Inventory Managament</small></a>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5 d-flex mx-4 px-3">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <p class="last2"> <b>Select Criteria </b></p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 text-end mb-3">
+            <button class="btn btn1 fs-6 mx-2 text-white " type="button" routerLink="./../add-student"> SAVE
+            </button>
+            <button class="btn btn2 last4 fs-6  text-white " type="button" routerLink="./../add-student"> CANCEL
+            </button>
+        </div>
+    </div>
+    <div class="card shadow mx-3 headercard">
+        <div class="col-12 mx-2">
+            <h5 class="my-3 headcolr" style="font-weight: 400;">Inventory Managament</h5>
+
+        </div>
+        <div class="mx-3">
+            <form [formGroup]="formpage" (ngSubmit)="onsubmit()">
+                <div class="row mx-3 my-3">
+                    <div class="row mt-3">
+
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+                            <mat-form-field appearance="fill" class="example-full-width field">
+                                <mat-label class="info">Name</mat-label>
+                                <input matInput formControlName="Name" required
+                                    [ngClass]="{ 'is-invalid': Submitted && f['Name'].errors || f['Name'].touched&& f['Name'].errors }">
+                                <mat-error *ngIf="Submitted && f['Name'].errors|| f['Name'].touched&& f['Name'].errors">
+                                    Please Enter Your Name</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+                            <mat-form-field appearance="fill" class="example-full-width field">
+                                <mat-label class="info"> Description</mat-label>
+                                <input matInput formControlName="Description" [ngClass]="{ 'is-invalid': Submitted &&
+                             f['Description'].errors || f['Description'].touched&& f['Description'].errors }">
+                                <mat-error
+                                    *ngIf="Submitted && f['Description'].errors|| f['Description'].touched&& f['Description'].errors">
+                                    Please Enter Your Description</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+                            <mat-form-field appearance="fill" class=" field ">
+                                <mat-label class="info  ">Status</mat-label>
+                                <mat-select formControlName="Status" [ngClass]="{ 'is-invalid': Submitted &&
+                                    f['Status'].errors || f['Status'].touched&& f['Status'].errors }">
+                                    <mat-option>Status</mat-option>
+                                    <mat-option *ngFor="let Status of status" [value]="Status">
+                                        {{Status}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error
+                                    *ngIf="Submitted && f['Status'].errors|| f['Status'].touched&& f['Status'].errors">
+                                    Please Select Your status</mat-error>
+                            </mat-form-field>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

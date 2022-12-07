@@ -6,16 +6,20 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { AddUserComponent } from './add-user/add-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UOMComponent } from './uom/uom.component';
 @NgModule({
   declarations: [
     AddUserComponent,
     DashboardComponent,
     ProfileComponent,
+    UOMComponent,
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
-    LayoutModule
+    LayoutModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class PagesModule { }
