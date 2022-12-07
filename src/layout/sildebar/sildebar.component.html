@@ -1,11 +1,27 @@
 <div class="sidebar" [class.sidebar-close]="!openSidebar">
-    <div class="logo-details">
-        <div class="logo nav-links align-items-center" style="padding-bottom: 0px;">
 
-            <h5 class="py-2 text-bold text-white "> <i class='bx bx-id-card mx-2 ' style="font-size: 25px;"></i>
-                Inventry Management </h5>
+    <div class="logo-details">
+
+        <div class="logo nav-links align-items-center" style="padding-bottom: 0px;">
+            <div class="d-flex">
+                <div class="home-header pt-0">
+                    <div class="hamburger-menu">
+                        <input type="checkbox" id="checkbox-hamburger-menu" [(ngModel)]="openSidebar" />
+                        <label class="label-hamburger-menu" for="checkbox-hamburger-menu">
+                            <i class="fa fa-cart-plus fs-4 me-4" style="color: white;" aria-hidden="true"></i>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="py-2 text-bold text-white" style="margin-left: -18%;">
+                        Shopping </h5>
+                </div>
+
+            </div>
         </div>
+
     </div>
+
 
     <ul class="nav-links" id="nav-links">
         <li *ngFor="let item of menuSidebar" #itemEl routerLinkActive="active">
@@ -31,8 +47,9 @@
         </li>
     </ul>
 </div>
-<section class="home-section mt-0">
-    <div class="home-header">
+<section class="home-section pt-2">
+    <div class="pt-0">
+        <!-- <div class="home-header pt-0">
         <div class="hamburger-menu">
             <input type="checkbox" id="checkbox-hamburger-menu" [(ngModel)]="openSidebar" />
             <label class="label-hamburger-menu" for="checkbox-hamburger-menu">
@@ -41,6 +58,9 @@
                 <div class="bar"></div>
             </label>
         </div>
+    </div> -->
+        <div>
+            <router-outlet></router-outlet>
+        </div>
     </div>
- 
 </section>
