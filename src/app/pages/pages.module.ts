@@ -6,17 +6,19 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { AddUserComponent } from './add-user/add-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RoleComponent } from './role/role.component';
+import { AddVendorComponent } from './add-vendor/add-vendor.component';
 import { MaterialsModule } from 'src/materials/materials.module';
 import { MaterialsRoutingModule } from 'src/materials/materials-routing.module';
 import { NgSelectModule,NgOption } from '@ng-select/ng-select';
 
-import { AddVendorComponent } from './add-vendor/add-vendor.component';
 @NgModule({
  
   declarations: [
     AddUserComponent,
     DashboardComponent,
     ProfileComponent,
+    RoleComponent,
     AddVendorComponent,
   ],
   imports: [
