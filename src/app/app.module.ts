@@ -37,7 +37,7 @@ import { LayoutModule } from 'src/layout/layout.module';
     AppRoutingModule,
     CommonModule,
     PagesModule,
-    BrowserAnimationsModule, // required animations module
+    BrowserAnimationsModule, 
     ToastrModule.forRoot(),
     NgxSpinnerModule,
     MaterialsModule,
