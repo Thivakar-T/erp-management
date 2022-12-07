@@ -1,0 +1,348 @@
+<div class="container-fluid mt-0 pt-0">
+    <div class="card mx-3 mt-2 headercard shadow">
+        <div class="row  mx-2 p-3 ">
+            <div class="col-lg-7 col-md-10 mx-0">
+                <h4 class="my-auto headcolr"> <b> Inventory Managament</b></h4>
+            </div>
+            <div class="col-lg-5 col-md-10 my-auto text-lg-right text-sm-left text-sm-left">
+                <a class="mx-2 alink" href="#">
+                    <small>Dashboard</small></a>|
+                <a class="mx-2 alink" href="#"> <small> vendor
+                    </small></a>|
+                <a class="alink" href="#"><small>Inventory Managament</small></a>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5 d-flex mx-4 px-3">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <p class="last2"> <b>Select Criteria </b></p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 text-end mb-3">
+            <button class="btn btn1 fs-6 mx-2 text-white " type="button" routerLink="./../add-student"> SAVE
+            </button>
+            <button class="btn btn2 last4 fs-6  text-white " type="button" routerLink="./../add-student"> CANCEL
+            </button>
+        </div>
+    </div>
+    <div class="card shadow mx-3 headercard">
+        <div class="col-12 mx-2">
+            <h5 class="my-3 headcolr" style="font-weight: 400;">Inventory Managament</h5>
+
+        </div>
+        <div class="mx-3">
+            <form [formGroup]="formpage" (ngSubmit)="onsubmit()">
+                <div class="row mx-3 my-3">
+                    <div class="row mt-3">
+
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+                            <mat-form-field appearance="fill" class="example-full-width field">
+                                <mat-label class="info">First Name</mat-label>
+                                <input matInput formControlName="firstName" required
+                                    [ngClass]="{ 'is-invalid': Submitted && f['firstName'].errors || f['firstName'].touched&& f['firstName'].errors }">
+                                <mat-error
+                                    *ngIf="Submitted && f['firstName'].errors|| f['firstName'].touched&& f['firstName'].errors">
+                                    Please Enter Your FirstName</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+                            <mat-form-field appearance="fill" class="example-full-width field">
+                                <mat-label class="info"> Last Name</mat-label>
+                                <input matInput formControlName="lastName" [ngClass]="{ 'is-invalid': Submitted &&
+                             f['lastName'].errors || f['lastName'].touched&& f['lastName'].errors }">
+                                <mat-error
+                                    *ngIf="Submitted && f['lastName'].errors|| f['lastName'].touched&& f['lastName'].errors">
+                                    Please Enter Your Last Name</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+                            <mat-form-field appearance="fill" class="field">
+                                <mat-label class="info   ">Email</mat-label>
+                                <input matInput formControlName="emailAddress" [ngClass]="{ 'is-invalid': Submitted &&
+                            f['emailAddress'].errors || f['emailAddress'].touched&& f['emailAddress'].errors }">
+                                <mat-error
+                                    *ngIf="Submitted && f['emailAddress'].errors|| f['emailAddress'].touched&& f['emailAddress'].errors">
+                                    Please Enter Your emailAddress</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+                            <mat-form-field appearance="fill" class="field">
+                                <mat-label class="info">Phone Number</mat-label>
+                                <input matInput type="number" [ngClass]="{ 'is-invalid': Submitted &&
+                            f['PhoneNo'].errors || f['PhoneNo'].touched&& f['PhoneNo'].errors }">
+                                <mat-error
+                                    *ngIf="Submitted && f['PhoneNo'].errors|| f['PhoneNo'].touched&& f['PhoneNo'].errors">
+                                    Please Enter Your PhoneNumber</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+                            <mat-form-field appearance="fill" class=" field ">
+                                <mat-label class="info  ">Country</mat-label>
+                                <mat-select formControlName="CountryId" [ngClass]="{ 'is-invalid': Submitted &&
+                        f['CountryId'].errors || f['CountryId'].touched&& f['CountryId'].errors }">
+                                    <mat-option>CountryId</mat-option>
+                                    <mat-option *ngFor="let CountryId of cate" [value]="CountryId.value">
+                                        {{CountryId.viewValue}}
+                                    </mat-option>
+                                    <mat-error
+                                        *ngIf="Submitted && f['CountryId'].errors|| f['CountryId'].touched&& f['CountryId'].errors">
+                                        Please Select Your Country</mat-error>
+                                </mat-select>
+
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+                            <mat-form-field appearance="fill" class=" field ">
+                                <mat-label class="info  ">State</mat-label>
+                                <mat-select formControlName="StateId" [ngClass]="{ 'is-invalid': Submitted &&
+                            f['StateId'].errors || f['StateId'].touched&& f['StateId'].errors }">
+                                    <mat-option>State</mat-option>
+                                    <mat-option *ngFor="let StateId of cate" [value]="StateId.value">
+                                        {{StateId.viewValue}}
+                                    </mat-option>
+                                    <mat-error
+                                        *ngIf="Submitted && f['StateId'].errors|| f['StateId'].touched&& f['StateId'].errors">
+                                        Please Select Your State</mat-error>
+                                </mat-select>
+
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+                            <mat-form-field appearance="fill" class=" field ">
+                                <mat-label class="info  ">City</mat-label>
+                                <mat-select formControlName="CityId" [ngClass]="{ 'is-invalid': Submitted &&
+                                f['CityId'].errors || f['CityId'].touched&& f['CityId'].errors }">
+                                    <mat-option>City</mat-option>
+                                    <mat-option *ngFor="let CityId of cate" [value]="CityId.value">
+                                        {{CityId.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error
+                                    *ngIf="Submitted && f['CityId'].errors|| f['CityId'].touched&& f['CityId'].errors">
+                                    Please Select Your State</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+                            <mat-form-field appearance="fill" class=" field ">
+                                <mat-label class="info  ">gstIN</mat-label>
+                                <!-- <mat-select formControlName="gstIN" [ngClass]="{ 'is-invalid': Submitted &&
+                                    f['gstIN'].errors || f['gstIN'].touched&& f['gstIN'].errors }">
+                                    <mat-option>gstIN</mat-option>
+                                    <mat-option *ngFor="let gstIN of cate" [value]="gstIN.value">
+                                        {{gstIN.viewValue}}
+                                    </mat-option>
+                                    <mat-error
+                                        *ngIf="Submitted && f['gstIN'].errors|| f['gstIN'].touched&& f['gstIN'].errors">
+                                        Please Select Your Role</mat-error>
+                                </mat-select> -->
+                                <input matInput formControlName="gstIN" [ngClass]="{ 'is-invalid': Submitted &&
+                        f['gstIN'].errors || f['gstIN'].touched&& f['gstIN'].errors }">
+                                <mat-hint></mat-hint>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
+                            <mat-form-field appearance="fill" class=" field ">
+                                <mat-label class="info  ">Status</mat-label>
+                                <mat-select formControlName="Status" [ngClass]="{ 'is-invalid': Submitted &&
+                                    f['Status'].errors || f['Status'].touched&& f['Status'].errors }">
+                                    <mat-option>Status</mat-option>
+                                    <mat-option *ngFor="let Status of cate" [value]="Status.value">
+                                        {{Status.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error
+                                    *ngIf="Submitted && f['Status'].errors|| f['Status'].touched&& f['Status'].errors">
+                                    Please Select Your status</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 ">
+                            <mat-form-field appearance="fill" class=" field ">
+                                <mat-label class="info "> Address Line1</mat-label>
+                                <input matInput formControlName="AddressLine1" [ngClass]="{ 'is-invalid': Submitted &&
+                            f['AddressLine1'].errors || f['AddressLine1'].touched&& f['AddressLine1'].errors }">
+                                <mat-error
+                                    *ngIf="Submitted && f['AddressLine1'].errors|| f['AddressLine1'].touched&& f['AddressLine1'].errors">
+                                    Please Select Your AddressLine1</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 ">
+                            <mat-form-field appearance="fill" class=" field ">
+                                <mat-label class="info "> Address Line2</mat-label>
+                                <input matInput formControlName="AddressLine2" [ngClass]="{ 'is-invalid': Submitted &&
+                            f['AddressLine2'].errors || f['AddressLine2'].touched&& f['AddressLine2'].errors }">
+                            </mat-form-field>
+                        </div>
+
+
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                            <mat-form-field appearance="fill" class="info field ">
+                                <mat-label class="info">gstIN </mat-label>
+                                <input matInput formControlName="gstIN" [ngClass]="{ 'is-invalid': Submitted &&
+                        f['gstIN'].errors || f['gstIN'].touched&& f['gstIN'].errors }">
+                            </mat-form-field>
+                            <mat-error *ngIf="Submitted && f['gstIN'].errors|| f['gstIN'].touched&& f['gstIN'].errors">
+                                Please Select Your gstIN</mat-error>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- <div class="col-lg-4 col-md-10 mb-3"> -->
+<!-- <mat-form-field  class="mat-form-field"  appearance="outline">
+    <mat-label>First Name </mat-label>
+    <input class="matInput"  matInput placeholder="First Name" formControlName="fName">
+    <mat-error *ngIf="formpage.get('fName')">
+        First Name is Required!
+    </mat-error>
+</mat-form-field> -->
+<!-- <label class="mb-2 text-secondary ">First Name</label>
+    <input style="border-radius: 30px;" matInput class="form-control ">
+</div>
+<div class="col-lg-4 col-md-10 mb-3"> -->
+<!-- <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>Last Name </mat-label>
+    <input matInput placeholder="Last Name" formControlName="lName">
+    <mat-error *ngIf="formpage.get('lName')">
+        Last Name is Required!
+    </mat-error>
+</mat-form-field> -->
+<!-- <label class="mb-2 text-secondary">Last Name</label>
+    <input style="border-radius: 30px;" matInput class="form-control ">
+</div> -->
+<!-- <div class="col-lg-4 col-md-10 mb-3"> -->
+<!-- <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Email" formControlName="email">
+    <mat-error *ngIf="formpage.get('email')">
+        Email is Required!
+    </mat-error>
+</mat-form-field> -->
+<!-- <label class="mb-2 text-secondary">Email</label>
+    <input style="border-radius: 30px;" matInput class="form-control ">
+</div>
+<div class="col-lg-4 col-md-10 mb-3"> -->
+<!-- <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>Mobile Number </mat-label>
+    <input matInput placeholder="Mobile Number " formControlName="mobileNo">
+    <mat-error *ngIf="formpage.get('mobileNo')">
+        Mobile Number is Required!
+    </mat-error>
+</mat-form-field> -->
+<!-- <label class="mb-2 text-secondary">Mobile Number</label>
+    <input style="border-radius: 30px;" matInput class="form-control ">
+</div>
+<div class="col-lg-4 col-md-10 mb-3"> -->
+<!-- <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>Temporary Address</mat-label>
+    <textarea matInput cdkTextareaAutosize placeholder="Address" #autosize="cdkTextareaAutosize"
+        formControlName="addressLine1" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+    <mat-error *ngIf="formpage.get('addressLine1')">
+        Address is Required!
+    </mat-error>
+</mat-form-field> -->
+<!-- <label class="mb-2 text-secondary">Address</label>
+    <input style="border-radius: 30px;" matInput class="form-control ">
+
+</div>
+<div class="col-lg-4 col-md-10 mb-3"> -->
+<!-- <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>Permanent Address</mat-label>
+    <textarea matInput cdkTextareaAutosize placeholder="Address" #autosize="cdkTextareaAutosize"
+        formControlName="addressLine2" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+    <mat-error *ngIf="formpage.get('addressLine2')">
+        Address is Required!
+    </mat-error>
+</mat-form-field> -->
+<!-- <label class="mb-2 text-secondary">Address</label>
+    <input style="border-radius: 30px;" matInput class="form-control ">
+
+</div>
+<div class="col-lg-4 col-md-10 mb-3"> -->
+<!-- <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>Select Country</mat-label>
+    <mat-select formControlName="countryId" >
+        <mat-option ></mat-option>
+    </mat-select>
+    <mat-error *ngIf="formpage.get('countryId')">
+        Country is Required!
+    </mat-error>
+</mat-form-field> -->
+<!-- <label class="mb-2 text-secondary">Select Country</label>
+    <input style="border-radius: 30px;" matInput class="form-control ">
+</div>
+<div class="col-lg-4 col-md-10 mb-3"> -->
+<!-- <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>Select State</mat-label>
+    <mat-select formControlName="stateId">
+        <mat-option></mat-option>
+    </mat-select>
+    <mat-error *ngIf="formpage.get('stateId')">
+        State is Required!
+    </mat-error>
+</mat-form-field> -->
+<!-- <label class="mb-2 text-secondary">Select State</label>
+    <input style="border-radius: 30px;" matInput class="form-control ">
+</div>
+<div class="col-lg-4 col-md-10 mb-3"> -->
+<!-- <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>Select City</mat-label>
+    <mat-select formControlName="cityId" >
+        <mat-option></mat-option>
+    </mat-select>
+    <mat-error *ngIf="formpage.get('cityId')">
+        City is Required!
+    </mat-error>
+</mat-form-field> -->
+<!-- <label class="mb-2 text-secondary">Select City</label>
+    <input style="border-radius: 30px;" matInput class="form-control ">
+</div>
+<div class="col-lg-4 col-md-10 mb-3"> -->
+<!-- <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>GstIN </mat-label>
+    <input  matInput placeholder="GstIN " formControlName="gstIN">
+    <mat-error *ngIf="formpage.get('gstIN')">
+        GstIN is Required!
+    </mat-error>
+</mat-form-field> -->
+<!-- <label class="mb-2 text-secondary">GstIN</label>
+    <input style="border-radius: 30px;" matInput class="form-control ">
+</div>
+<div class="col-lg-4 col-md-10 mb-3"> -->
+<!-- <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>Alternative Mobile Number</mat-label>
+    <input type="number" matInput placeholder="Alternative Mobile Number" formControlName="alternativeMobileNo">
+    <mat-error *ngIf="formpage.get('alternativeMobileNo')">
+        Alternative Mobile Number is Required!
+    </mat-error>
+</mat-form-field> -->
+<!-- <label class="mb-2 text-secondary">Alternative Mobile Number</label>
+    <input style="border-radius: 30px;" matInput class="form-control ">
+</div>
+<div class="col-lg-4 col-md-10 mb-3"> -->
+<!-- <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>Select Gender</mat-label>
+    <mat-select formControlName="status" >
+        <mat-option *ngFor="let Status of status" [value]='Status'>{{Status}}
+        </mat-option>
+    </mat-select>
+    <mat-error *ngIf="formpage.get('status')">
+        Status is Required!
+    </mat-error>
+</mat-form-field> -->
+<!-- <label class="mb-2 text-secondary">Select Gender</label>
+    <input style="border-radius: 30px;" matInput class="form-control ">
+</div>
+<div class="col-lg-4 col-md-10 mb-3"> -->
+<!-- <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>gstIN</mat-label>
+    <textarea matInput cdkTextareaAutosize placeholder="Address" #autosize="cdkTextareaAutosize"
+        formControlName="gstIN" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+    <mat-error *ngIf="formpage.get('gstIN')">
+        gstIN is Required!
+    </mat-error>
+</mat-form-field> -->
+<!-- <label class="mb-2 text-secondary">Address</label>
+    <input style="border-radius: 30px;" matInput class="form-control "> -->
+
+<!-- </div> -->

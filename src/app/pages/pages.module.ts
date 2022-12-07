@@ -7,17 +7,23 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RoleComponent } from './role/role.component';
+import { AddVendorComponent } from './add-vendor/add-vendor.component';
+import { MaterialsModule } from 'src/materials/materials.module';
 @NgModule({
   declarations: [
     AddUserComponent,
     DashboardComponent,
     ProfileComponent,
     RoleComponent,
+    AddVendorComponent,
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
-    LayoutModule
+    LayoutModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MaterialsModule
   ]
 })
 export class PagesModule { }

@@ -3,12 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RoleComponent } from './role/role.component';
-
+import { AddVendorComponent } from './add-vendor/add-vendor.component';
 const routes: Routes = [
   {path:"dashboard",component:DashboardComponent,
   children: [
     { path:"profile", component : ProfileComponent },
-    {path:"role",component:RoleComponent}
+    {path:"role",component:RoleComponent},
+    {path:"add-vendor",component:AddVendorComponent}
   ]
 }
 ]
