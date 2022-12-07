@@ -44,6 +44,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS,MatFormFieldAppearance} from '@angular/material/form-field';
+import {TextFieldModule} from '@angular/cdk/text-field';
+
 
 @NgModule({
   providers: [
@@ -99,6 +101,7 @@ import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS,MatFormFieldAppearanc
     PortalModule,
     ScrollingModule,
     MatFormFieldModule,
+    TextFieldModule
     
   ]
 })

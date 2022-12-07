@@ -10,13 +10,14 @@ import { MaterialsModule } from 'src/materials/materials.module';
 import { MaterialsRoutingModule } from 'src/materials/materials-routing.module';
 import { NgSelectModule,NgOption } from '@ng-select/ng-select';
 
+import { AddVendorComponent } from './add-vendor/add-vendor.component';
 @NgModule({
  
   declarations: [
     AddUserComponent,
     DashboardComponent,
     ProfileComponent,
-    
+    AddVendorComponent,
   ],
   imports: [
     CommonModule,
@@ -27,7 +28,6 @@ import { NgSelectModule,NgOption } from '@ng-select/ng-select';
     MaterialsModule,
     MaterialsRoutingModule,
     NgSelectModule,
-    
   ]
 })
 export class PagesModule { }
