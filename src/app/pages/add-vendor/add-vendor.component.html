@@ -1,0 +1,188 @@
+<div class="container mt-0 pt-0">
+    <div class="card mx-3 mt-2 headercard shadow">
+        <div class="row  mx-2 p-3 ">
+            <div class="col-lg-7 col-md-10 mx-0">
+                <h4 class="my-auto headcolr"> <b> Inventory Managament</b></h4>
+            </div>
+            <div class="col-lg-5 col-md-10 my-auto text-lg-right text-sm-left text-sm-left">
+                <a class="mx-2 alink" href="#">
+                    <small>Dashboard</small></a>|
+                <a class="mx-2 alink" href="#"> <small> vendor
+                        </small></a>|
+                <a class="alink" href="#"><small>Inventory Managament</small></a>
+            </div>
+        </div>
+    </div>
+    <h5 class="mt-5 mb-4 ms-5 headcolr"> <b> Select Criteria</b></h5>
+    <div class="card shadow mx-3 headercard">
+        <div class="col-12 mx-2">
+            <h5 class="my-3 headcolr" style="font-weight: 400;">Inventory Managament</h5>
+
+        </div>
+        <div class="mx-5">
+            <form [formGroup]="formpage" (ngSubmit)="onsubmit()">
+                <div class="row mx-3 my-3">
+
+                    <div class="col-lg-4 col-md-10 mb-3">
+                        <!-- <mat-form-field  class="mat-form-field"  appearance="outline">
+                        <mat-label>First Name </mat-label>
+                        <input class="matInput"  matInput placeholder="First Name" formControlName="fName">
+                        <mat-error *ngIf="formpage.get('fName')">
+                            First Name is Required!
+                        </mat-error>
+                    </mat-form-field> -->
+                        <label class="mb-2 text-secondary ">First Name</label>
+                        <input style="border-radius: 30px;" matInput class="form-control ">
+                    </div>
+                    <div class="col-lg-4 col-md-10 mb-3">
+                        <!-- <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Last Name </mat-label>
+                        <input matInput placeholder="Last Name" formControlName="lName">
+                        <mat-error *ngIf="formpage.get('lName')">
+                            Last Name is Required!
+                        </mat-error>
+                    </mat-form-field> -->
+                        <label class="mb-2 text-secondary">Last Name</label>
+                        <input style="border-radius: 30px;" matInput class="form-control ">
+                    </div>
+                    <div class="col-lg-4 col-md-10 mb-3">
+                        <!-- <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Email" formControlName="email">
+                        <mat-error *ngIf="formpage.get('email')">
+                            Email is Required!
+                        </mat-error>
+                    </mat-form-field> -->
+                        <label class="mb-2 text-secondary">Email</label>
+                        <input style="border-radius: 30px;" matInput class="form-control ">
+                    </div>
+                    <div class="col-lg-4 col-md-10 mb-3">
+                        <!-- <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Mobile Number </mat-label>
+                        <input matInput placeholder="Mobile Number " formControlName="mobileNo">
+                        <mat-error *ngIf="formpage.get('mobileNo')">
+                            Mobile Number is Required!
+                        </mat-error>
+                    </mat-form-field> -->
+                        <label class="mb-2 text-secondary">Mobile Number</label>
+                        <input style="border-radius: 30px;" matInput class="form-control ">
+                    </div>
+                    <div class="col-lg-4 col-md-10 mb-3">
+                        <!-- <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Temporary Address</mat-label>
+                        <textarea matInput cdkTextareaAutosize placeholder="Address" #autosize="cdkTextareaAutosize"
+                            formControlName="addressLine1" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+                        <mat-error *ngIf="formpage.get('addressLine1')">
+                            Address is Required!
+                        </mat-error>
+                    </mat-form-field> -->
+                        <label class="mb-2 text-secondary">Address</label>
+                        <input style="border-radius: 30px;" matInput class="form-control ">
+
+                    </div>
+                    <div class="col-lg-4 col-md-10 mb-3">
+                        <!-- <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Permanent Address</mat-label>
+                        <textarea matInput cdkTextareaAutosize placeholder="Address" #autosize="cdkTextareaAutosize"
+                            formControlName="addressLine2" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+                        <mat-error *ngIf="formpage.get('addressLine2')">
+                            Address is Required!
+                        </mat-error>
+                    </mat-form-field> -->
+                        <label class="mb-2 text-secondary">Address</label>
+                        <input style="border-radius: 30px;" matInput class="form-control ">
+
+                    </div>
+                    <div class="col-lg-4 col-md-10 mb-3">
+                        <!-- <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Select Country</mat-label>
+                        <mat-select formControlName="countryId" >
+                            <mat-option ></mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="formpage.get('countryId')">
+                            Country is Required!
+                        </mat-error>
+                    </mat-form-field> -->
+                        <label class="mb-2 text-secondary">Select Country</label>
+                        <input style="border-radius: 30px;" matInput class="form-control ">
+                    </div>
+                    <div class="col-lg-4 col-md-10 mb-3">
+                        <!-- <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Select State</mat-label>
+                        <mat-select formControlName="stateId">
+                            <mat-option></mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="formpage.get('stateId')">
+                            State is Required!
+                        </mat-error>
+                    </mat-form-field> -->
+                        <label class="mb-2 text-secondary">Select State</label>
+                        <input style="border-radius: 30px;" matInput class="form-control ">
+                    </div>
+                    <div class="col-lg-4 col-md-10 mb-3">
+                        <!-- <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Select City</mat-label>
+                        <mat-select formControlName="cityId" >
+                            <mat-option></mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="formpage.get('cityId')">
+                            City is Required!
+                        </mat-error>
+                    </mat-form-field> -->
+                        <label class="mb-2 text-secondary">Select City</label>
+                        <input style="border-radius: 30px;" matInput class="form-control ">
+                    </div>
+                    <div class="col-lg-4 col-md-10 mb-3">
+                        <!-- <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>GstIN </mat-label>
+                        <input  matInput placeholder="GstIN " formControlName="gstIN">
+                        <mat-error *ngIf="formpage.get('gstIN')">
+                            GstIN is Required!
+                        </mat-error>
+                    </mat-form-field> -->
+                        <label class="mb-2 text-secondary">GstIN</label>
+                        <input style="border-radius: 30px;" matInput class="form-control ">
+                    </div>
+                    <div class="col-lg-4 col-md-10 mb-3">
+                        <!-- <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Alternative Mobile Number</mat-label>
+                        <input type="number" matInput placeholder="Alternative Mobile Number" formControlName="alternativeMobileNo">
+                        <mat-error *ngIf="formpage.get('alternativeMobileNo')">
+                            Alternative Mobile Number is Required!
+                        </mat-error>
+                    </mat-form-field> -->
+                        <label class="mb-2 text-secondary">Alternative Mobile Number</label>
+                        <input style="border-radius: 30px;" matInput class="form-control ">
+                    </div>
+                    <div class="col-lg-4 col-md-10 mb-3">
+                        <!-- <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Select Gender</mat-label>
+                        <mat-select formControlName="status" >
+                            <mat-option *ngFor="let Status of status" [value]='Status'>{{Status}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="formpage.get('status')">
+                            Status is Required!
+                        </mat-error>
+                    </mat-form-field> -->
+                        <label class="mb-2 text-secondary">Select Gender</label>
+                        <input style="border-radius: 30px;" matInput class="form-control ">
+                    </div>
+                    <div class="col-lg-4 col-md-10 mb-3">
+                        <!-- <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Note</mat-label>
+                        <textarea matInput cdkTextareaAutosize placeholder="Address" #autosize="cdkTextareaAutosize"
+                            formControlName="note" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+                        <mat-error *ngIf="formpage.get('note')">
+                            Note is Required!
+                        </mat-error>
+                    </mat-form-field> -->
+                        <label class="mb-2 text-secondary">Address</label>
+                        <input style="border-radius: 30px;" matInput class="form-control ">
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
