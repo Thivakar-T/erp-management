@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Noto+Serif+Khojki&family=Poppins&family=Tiro+Tamil&display=swap');
+
+* {
+
+    font-family: 'Merriweather', sans-serif;
+  }
+  .card {
+    border: none;
+
+   }
+   #last{
+
+    font-size:14px;
+    color: rgb(130, 43, 223);
+   }
+   .last{
+
+    color: rgb(87, 42, 159);
+    font-size: 20px;
+   }
+   .list{
+    border: 2px ;
+
+   }
+   .last1{
+
+    background-image:linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+    margin-right: -20px;
+   }
+
+   .last3{
+    background-image:linear-gradient(rgb(48, 43, 126),rgb(48, 43, 126));
+   }
+   .last4{
+    background-image:linear-gradient(rgb(216, 31, 11),rgb(223, 15, 15));
+   }
+   .last2{
+    font-size:17px;
+    color: rgb(87, 42, 159);
+   }
+   .field{
+    width: 100%;
+   
+   }
+
+   .shadow{
+    margin-top: -55px;
+   }
+   #lasty{
+    font-size:14px;
+    color: rgb(130, 43, 223);
+    margin-right: -200px;
+   }
+   .ng-select.custom {
+    border:0px;
+    min-height: 40px;
+    border-radius: 0;
+}
+.ng-select.custom .ng-select-container  {            
+
+ color: #212529;
+}

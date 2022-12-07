@@ -9,7 +9,8 @@ import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   {path:"dashboard",component:DashboardComponent,
   children: [
-    { path:"profile", component : ProfileComponent }
+    { path:"profile", component : ProfileComponent },
+    { path:"add-user", component : AddUserComponent }
   ]
 }
 ]

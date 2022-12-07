@@ -1,1 +1,117 @@
-<p>add-user works!</p>
+<div class="container ">
+
+    <div class="shadow  pb-3 pt-4  px-3 bg-body rounded">
+        <div class="row">
+            <div class="col">
+                <h4 class="text-start last"><b class="margin">ADD USER</b></h4>
+            </div>
+
+            <div class="col text-end">
+                <div id="last">Dashboard | User Information | <b>Add User</b></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mt-5  px-3">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-10">
+            <p class="last2"> <b>Select Criteria </b></p>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-2 col-xl-1 text-end">
+            <button class="btn last3 fs-6  text-white " type="button" routerLink="./../add-student"> SAVE </button>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-2 col-xl-1 text-end">
+            <button class="btn last4 fs-6  text-white " type="button" routerLink="./../add-student"> CANCEL </button>
+        </div>
+    </div>
+</div>
+<div class="container ">
+    <div class="shadow justify-content-md-center px-4  py-3 mt-3 bg-body rounded ">
+        <form (ngSubmit)="onSubmit()" [formGroup]="studentForm">
+            <div class="row mt-5 text-center">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="First Name" id="validationCustom02" value="" required></div>
+                   
+                  <div class="col">
+                  
+                    <input type="text" class="form-control" placeholder="Last Name" id="validationCustom02" value="" required>
+                   
+                  </div>
+                <div class="col">
+                    
+                    <input type="text" class="form-control" placeholder="Email" id="validationCustom02" value="" required></div>
+                   
+                
+            </div>
+            <div class="row mt-5">
+                <div class="col ">
+                    <input type="text" class="form-control" placeholder="Phone Number" id="validationCustom02" value="" required>
+                   
+                </div>
+                <div class="col">
+                    <ng-select [items]="country"
+                    bindLabel="name"
+                    placeholder="Select country"
+                    
+                    >
+         </ng-select>
+                </div>
+                <div class="col">
+                    <ng-select [items]="state"
+                    bindLabel="name"
+                    placeholder="Select State"
+                    >
+         </ng-select>
+                </div>
+            </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <ng-select [items]="country"
+                        bindLabel="name"
+                        placeholder="Select City"
+                        
+                        >
+             </ng-select>
+                    </div>
+                    <div class="col">
+                        <ng-select [items]="state"
+                        bindLabel="name"
+                        placeholder="Select Role"
+                        >
+             </ng-select>
+                    </div>
+                    <div class="col">
+                        <ng-select [items]="cities"
+                        bindLabel="name"
+                        placeholder="Select status"
+                       
+                        >
+             </ng-select>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                  
+                        <input type="text" class="form-control  " placeholder="Address line 1" id="validationCustom02" value="" required>
+                       
+                      </div>
+                    <div class="col">
+                        
+                            <input type="text" class="form-control " placeholder="Address line 2" id="validationCustom02" value="" required>
+                       
+                    </div>
+                </div>
+                    <div class="col mb-5 mt-5">
+                        <textarea class="form-control" placeholder="Notes:" rows="5" id="inputMessage"></textarea>
+                </div>
+                    
+                
+
+            
+
+
+        </form>
+    </div>
+
+
+</div>
