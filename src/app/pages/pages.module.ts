@@ -6,11 +6,13 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { AddUserComponent } from './add-user/add-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RoleComponent } from './role/role.component';
 @NgModule({
   declarations: [
     AddUserComponent,
     DashboardComponent,
     ProfileComponent,
+    RoleComponent,
   ],
   imports: [
     CommonModule,
