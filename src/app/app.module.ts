@@ -15,10 +15,11 @@ import { DialogDialogAnimationsExampleDialogComponent } from './dialog-dialog-an
 import { AccountModule } from './account/account.module';
 import { AccountRoutingModule } from './account/account-routing.module';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { PagesRoutingModule } from './pages/pages-routing.module';
+import{PagesModule}from './pages/pages.module'
 import { TableComponent } from './table/table.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { LayoutModule } from 'src/layout/layout.module';
-import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule,
     CommonModule,
     PagesModule,
-    BrowserAnimationsModule, // required animations module
+    BrowserAnimationsModule, 
     ToastrModule.forRoot(),
     NgxSpinnerModule,
     MaterialsModule,
@@ -44,6 +45,8 @@ import { PagesModule } from './pages/pages.module';
     MatButtonModule,
     MatDialogModule,
     AccountModule,
+    AccountRoutingModule ,
+    PagesRoutingModule ,
     AccountRoutingModule,
     ReactiveFormsModule,
     FormsModule,

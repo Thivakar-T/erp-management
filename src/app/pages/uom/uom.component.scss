@@ -1,5 +1,54 @@
+*{
+   font-family: 'poppins',sans-serif;
+}
+
+
+.mat-form-field {
+   width: 100%;
+  
+}
+
+.subbtn {
+   background-image: linear-gradient(rgb(126, 43, 126), rgb(186, 73, 157));
+}
+
+.btnicon {
+   position: relative;
+   top: 2px;
+}
+
+.btnsearch {
+   font-size: 18px;
+   margin: 0px 10px 0px 10px;
+}
+
+.alink {
+   text-decoration: none;
+   color: rgb(0, 0, 139);
+}
+
+.headercard {
+   border: none;
+   border-radius: 10px;
+}
+.label{
+   color: rgb(87,42,159);
+   font-size: 15px;
+}
+
+.headcolr{
+   color: rgb(87,42,159);
+}
+:host{
+   ::ng-deep{
+       .mat-mdc-text-field-wrapper {
+           height: 50px;
+           flex: auto;
+       }
+   }
+}
 * {
-    
+   
   font-family: 'Poppins', sans-serif;
 }
 #last{
@@ -29,37 +78,13 @@
   font-size: 14px;
  }
 
-// .example-form-field {
-//   margin-right: 20px;
-// }
-// .upload-btn-wrapper {
-//   position: relative;
-//   overflow: hidden;
-//   display: inline-block;
-// }
+
 
 .myapp-no-padding-dialog .mat-dialog-container {
 padding: 0;
 }
 
 
-// .btn {
-//   border: 2px solid gray;
-//   color: gray;
-//   background-color: white;
-//   padding: 8px 20px;
-//   border-radius: 8px;
-//   font-size: 20px;
-//   font-weight: bold;
-// }
-
-// .upload-btn-wrapper input[type=file] {
-//   font-size: 100px;
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-//   opacity: 0;
-// }
 
 
 .custom-file-button input[type=file] {
