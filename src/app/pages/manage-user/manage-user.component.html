@@ -2,7 +2,7 @@
     <div class="card mx-3 mt-2 headercard shadow">
         <div class="row  mx-2 p-3 ">
             <div class="col-lg-7 col-md-10 mx-0">
-                <h4 class="my-auto headcolr"> <b> Inventory Managament</b></h4>
+                <h4 class="my-auto headcolr"> <b> Manage User</b></h4>
             </div>
             <div class="col-lg-5 col-md-10 my-auto text-lg-right text-sm-left text-sm-left">
                 <a class="mx-2 alink" href="#">
@@ -16,7 +16,7 @@
     <h5 class="mt-5 mb-4 ms-5 headcolr"> <b> Select Criteria</b></h5>
     <div class="card shadow mx-3 headercard">
         <div class="col-12 mx-2">
-            <h5 class="my-3 headcolr" style="font-weight: 400;">Inventory Managament</h5>
+            <h5 class="my-3 headcolr" style="font-weight: 400;">User Info</h5>
         </div>
         <div class="mx-2">
             <form [formGroup]="formpage" >
@@ -35,9 +35,9 @@
                             <!-- <input matInput (keyup)="applyFilter($event)" class="form-control mx-3" placeholder="search"> -->
                         </div>
                     </div> 
-                     <table class="mt-5" mat-table [dataSource]="dataSource">
+                     <table class="mt-5 table-responsive" mat-table [dataSource]="dataSource">
                         <ng-container matColumnDef="position">
-                            <th mat-header-cell *matHeaderCellDef> S.No. </th>
+                            <th mat-header-cell *matHeaderCellDef> S.No.</th>
                             <td mat-cell *matCellDef="let element"> {{element.position}} </td>
                         </ng-container>
                         <ng-container matColumnDef="name">
