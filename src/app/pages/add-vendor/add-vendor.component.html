@@ -2,14 +2,14 @@
     <div class="card mx-3 mt-2 headercard shadow">
         <div class="row  mx-2 p-3 ">
             <div class="col-lg-7 col-md-10 mx-0">
-                <h4 class="my-auto headcolr"> <b> Inventory Managament</b></h4>
+                <h4 class="my-auto headcolr"> <b> Inventory Management</b></h4>
             </div>
             <div class="col-lg-5 col-md-10 my-auto text-lg-right text-sm-left text-sm-left">
                 <a class="mx-2 alink" href="#">
                     <small>Dashboard</small></a>|
                 <a class="mx-2 alink" href="#"> <small> vendor
                     </small></a>|
-                <a class="alink" href="#"><small>Inventory Managament</small></a>
+                <a class="alink" href="#"><small>Inventory Management</small></a>
             </div>
         </div>
     </div>
@@ -26,8 +26,8 @@
     </div>
     <div class="card shadow mx-3 headercard">
         <div class="col-12 mx-2">
-            <h5 class="my-3 headcolr" style="font-weight: 400;">Inventory Managament</h5>
-
+            <h5 class="my-3 headcolr ms-4" style="font-weight: 400;">Vendor Info</h5>
+            <hr class="mx-4">
         </div>
         <div class="mx-3">
             <form [formGroup]="formpage" (ngSubmit)="onsubmit()">
@@ -35,9 +35,9 @@
                     <div class="row mt-3">
 
                         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-                            <mat-form-field appearance="fill" class="example-full-width field">
+                            <mat-form-field  appearance="fill" class="example-full-width field">
                                 <mat-label class="info">First Name</mat-label>
-                                <input matInput formControlName="firstName" required
+                                <input  matInput formControlName="firstName" required
                                     [ngClass]="{ 'is-invalid': Submitted && f['firstName'].errors || f['firstName'].touched&& f['firstName'].errors }">
                                 <mat-error
                                     *ngIf="Submitted && f['firstName'].errors|| f['firstName'].touched&& f['firstName'].errors">
@@ -175,12 +175,12 @@
 
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
                             <mat-form-field appearance="fill" class="info field ">
-                                <mat-label class="info">gstIN </mat-label>
-                                <input matInput formControlName="gstIN" [ngClass]="{ 'is-invalid': Submitted &&
-                        f['gstIN'].errors || f['gstIN'].touched&& f['gstIN'].errors }">
+                                <mat-label class="info">Note </mat-label>
+                                <input matInput formControlName="Note" [ngClass]="{ 'is-invalid': Submitted &&
+                        f['Note'].errors || f['Note'].touched&& f['Note'].errors }">
                             </mat-form-field>
-                            <mat-error *ngIf="Submitted && f['gstIN'].errors|| f['gstIN'].touched&& f['gstIN'].errors">
-                                Please Select Your gstIN</mat-error>
+                            <mat-error *ngIf="Submitted && f['Note'].errors|| f['Note'].touched&& f['Note'].errors">
+                                Note is Required</mat-error>
                         </div>
                     </div>
                 </div>
