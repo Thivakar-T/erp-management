@@ -15,7 +15,7 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { LayoutModule } from 'src/layout/layout.module';
 
 @NgModule({
- 
+
   declarations: [
     AddUserComponent,
     DashboardComponent,
@@ -32,13 +32,11 @@ import { LayoutModule } from 'src/layout/layout.module';
     ReactiveFormsModule,
     FormsModule,
     NgSelectModule,
-    ReactiveFormsModule,
-    FormsModule,
     LayoutModule,
     MaterialsModule,
     MaterialsRoutingModule,
   ]
-  
-  
+
+
 })
 export class PagesModule { }
