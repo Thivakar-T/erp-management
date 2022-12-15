@@ -17,7 +17,7 @@ import { DialogueBoxComponent } from './dialogue-box/dialogue-box.component';
 
 
 @NgModule({
- 
+
   declarations: [
     AddUserComponent,
     DashboardComponent,
@@ -36,13 +36,11 @@ import { DialogueBoxComponent } from './dialogue-box/dialogue-box.component';
     ReactiveFormsModule,
     FormsModule,
     NgSelectModule,
-    ReactiveFormsModule,
-    FormsModule,
     LayoutModule,
     MaterialsModule,
     MaterialsRoutingModule,
   ]
-  
-  
+
+
 })
 export class PagesModule { }
