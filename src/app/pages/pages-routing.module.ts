@@ -7,6 +7,8 @@ import { UOMComponent } from './uom/uom.component';
 import { ManageUserComponent } from './manage-user/manage-user.component';
 import { RoleComponent } from './role/role.component';
 import { AddVendorComponent } from './add-vendor/add-vendor.component';
+import { DialogueboxComponent } from './dialoguebox/dialoguebox.component';
+
 const routes: Routes = [
   {path:"dashboard",component:DashboardComponent,
   
@@ -16,7 +18,8 @@ const routes: Routes = [
     { path:"manageuser", component : ManageUserComponent },
     { path:"add-user", component : AddUserComponent },
     {path:"role",component:RoleComponent},
-    {path:"add-vendor",component:AddVendorComponent}
+    {path:"add-vendor",component:AddVendorComponent},
+    {path:"dialoguebox",component:DialogueboxComponent}
   ]
   },
 ]

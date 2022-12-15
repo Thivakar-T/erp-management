@@ -15,6 +15,7 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { LayoutModule } from 'src/layout/layout.module';
 import { DialogueBoxComponent } from './dialogue-box/dialogue-box.component';
 
+
 @NgModule({
  
   declarations: [
@@ -26,6 +27,7 @@ import { DialogueBoxComponent } from './dialogue-box/dialogue-box.component';
     RoleComponent,
     AddVendorComponent,
     DialogueBoxComponent,
+   
   ],
   imports: [
     CommonModule,
