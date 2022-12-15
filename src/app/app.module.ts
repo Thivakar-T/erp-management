@@ -27,8 +27,8 @@ import { LayoutModule } from 'src/layout/layout.module';
     CardComponent,
     DialogDialogAnimationsExampleDialogComponent,
     TableComponent,
-    InvoiceComponent
-
+    InvoiceComponent,
+    
 
 
   ],

@@ -1,179 +1,227 @@
-<div class="container-fulid px-4 mt-0 pt-0">
+<div class="container-fulid px-2 mt-0 pt-0">
     <div class="card mx-3 mt-2 headercard shadow">
         <div class="row  mx-2 p-3 ">
             <div class="col-lg-7 col-md-10 mx-0">
-                <h4 class="my-auto headcolr"> <b> Inventory Managament</b></h4>
+                <h4 class="my-auto headtextcolor"> <b>ADDUSER</b></h4>
             </div>
-            <div class="col-lg-5 col-md-10 my-auto text-lg-right text-sm-left text-sm-left">
-                <a class="mx-2 alink" href="#">
+            <div class="col-lg-5 col-md-10 my-auto text-lg-right text-end xt-sm-left text-sm-left">
+                <a class="mx-2 headerlink " href="#">
                     <small>Dashboard</small></a>|
-                <a class="mx-2 alink" href="#"> <small> Student
-                        Info</small></a>|
-                <a class="alink" href="#"><small>Inventory Managament</small></a>
+                <a class="mx-2 headerlink " href="#"><small> AddUser Info
+                    </small></a>|
+                <a class="headerlink " href="#"><small>AddUser</small></a>
             </div>
         </div>
     </div>
-    <div class="container-fulid px-3 mt-0 pt-0">
-        <div class="row mt-5 d-flex  px-2">
-            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                <p class="last2"> <b>Select Criteria </b></p>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 text-end mb-3">
-                <button class="btn btn1 fs-6 mx-2 text-white " type="button" routerLink="./../add-student"> SAVE
-                </button>
-                <button class="btn btn2 last4 fs-6  text-white " type="button" routerLink="./../add-student"> CANCEL
-                </button>
-            </div>
-        </div>
-         <div class="shadow justify-content-md-center px-4  py-3 mt-3 bg-body rounded ">
-        <form (ngSubmit)="onSubmit()" [formGroup]="studentForm">
-            <div class="row mt-3">
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-                    <mat-form-field  appearance="fill" class="example-full-width  mat-form-field" >
-                        <mat-label style="border:none ; background-color:none;" class="info p-0">First Name</mat-label>
-                        <input matInput formControlName="firstName" required
-                            [ngClass]="{ 'is-invalid': Submitted && f['firstName'].errors || f['firstName'].touched&& f['firstName'].errors }">
-                        <mat-error
-                            *ngIf="Submitted && f['firstName'].errors|| f['firstName'].touched&& f['firstName'].errors">
-                            Please Enter Your FirstName</mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-                    <mat-form-field appearance="fill" class="example-full-width field">
-                        <mat-label class="info"> Last Name</mat-label>
-                        <input matInput formControlName="lastName" [ngClass]="{ 'is-invalid': Submitted &&
-                     f['lastName'].errors || f['lastName'].touched&& f['lastName'].errors }">
-                        <mat-error
-                            *ngIf="Submitted && f['lastName'].errors|| f['lastName'].touched&& f['lastName'].errors">
-                            Please Enter Your Last Name</mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-                    <mat-form-field appearance="fill" class="field">
-                        <mat-label class="info   ">Email</mat-label>
-                        <input matInput formControlName="emailAddress" [ngClass]="{ 'is-invalid': Submitted &&
-                    f['emailAddress'].errors || f['emailAddress'].touched&& f['emailAddress'].errors }">
-                        <mat-error
-                            *ngIf="Submitted && f['emailAddress'].errors|| f['emailAddress'].touched&& f['emailAddress'].errors">
-                            Please Enter Your emailAddress</mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-                    <mat-form-field appearance="fill" class="field">
-                        <mat-label class="info">Phone Number</mat-label>
-                        <input matInput type="number" [ngClass]="{ 'is-invalid': Submitted &&
-                    f['PhoneNo'].errors || f['PhoneNo'].touched&& f['PhoneNo'].errors }">
-                        <mat-error
-                            *ngIf="Submitted && f['PhoneNo'].errors|| f['PhoneNo'].touched&& f['PhoneNo'].errors">
-                            Please Enter Your PhoneNumber</mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-                    <mat-form-field appearance="fill" class=" field ">
-                        <mat-label class="info  ">Country</mat-label>
-                        <mat-select formControlName="CountryId" [ngClass]="{ 'is-invalid': Submitted &&
-                f['CountryId'].errors || f['CountryId'].touched&& f['CountryId'].errors }">
-                            <mat-option>CountryId</mat-option>
-                            <mat-option *ngFor="let CountryId of country" [value]="CountryId.id">
-                                {{CountryId.name}}
-                            </mat-option>
-                            
-                        </mat-select>
-                        <mat-error
-                        *ngIf="Submitted && f['CountryId'].errors|| f['CountryId'].touched&& f['CountryId'].errors">
-                        Please Select Your Country</mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-                    <mat-form-field appearance="fill" class=" field ">
-                        <mat-label class="info  ">State</mat-label>
-                        <mat-select formControlName="StateId" [ngClass]="{ 'is-invalid': Submitted &&
-                    f['StateId'].errors || f['StateId'].touched&& f['StateId'].errors }">
-                            <mat-option>State</mat-option>
-                            <mat-option *ngFor="let StateId of state" [value]="StateId.id">
-                                {{StateId.name}}
-                            </mat-option>
-                            
-                        </mat-select>
-                        <mat-error
-                        *ngIf="Submitted && f['StateId'].errors|| f['StateId'].touched&& f['StateId'].errors">
-                        Please Select Your State</mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-                    <mat-form-field appearance="fill" class=" field ">
-                        <mat-label class="info  ">City</mat-label>
-                        <mat-select formControlName="CityId" [ngClass]="{ 'is-invalid': Submitted &&
-                        f['CityId'].errors || f['CityId'].touched&& f['CityId'].errors }">
-                            <mat-option>City</mat-option>
-                            <mat-option *ngFor="let CityId of cities" [value]="CityId.id">
-                                {{CityId.name}}
-                            </mat-option>
-                        </mat-select>
-                        <mat-error *ngIf="Submitted && f['CityId'].errors|| f['CityId'].touched&& f['CityId'].errors">
-                            Please Select Your State</mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-                    <mat-form-field appearance="fill" class=" field ">
-                        <mat-label class="info  ">Role</mat-label>
-                        <mat-select formControlName="RoleId" [ngClass]="{ 'is-invalid': Submitted &&
-                            f['RoleId'].errors || f['RoleId'].touched&& f['RoleId'].errors }">
-                            <mat-option>Role</mat-option>
-                            <mat-option *ngFor="let RoleId of role" [value]="RoleId.id">
-                                {{RoleId.name}}
-                            </mat-option>
-                            
-                        </mat-select>
-                        <mat-error
-                                *ngIf="Submitted && f['RoleId'].errors|| f['RoleId'].touched&& f['RoleId'].errors">
-                                Please Select Your Role</mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-                    <mat-form-field appearance="fill" class=" field ">
-                        <mat-label class="info  ">Status</mat-label>
-                        <mat-select formControlName="Status" [ngClass]="{ 'is-invalid': Submitted &&
-                            f['Status'].errors || f['Status'].touched&& f['Status'].errors }">
-                            <mat-option>Status</mat-option>
-                            <mat-option *ngFor="let Status of Status" [value]="Status.id">
-                                {{Status.name}}
-                            </mat-option>
-                        </mat-select>
-                        <mat-error *ngIf="Submitted && f['Status'].errors|| f['Status'].touched&& f['Status'].errors">
-                            Please Select Your status</mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 ">
-                    <mat-form-field appearance="fill" class=" field ">
-                        <mat-label class="info "> Address Line1</mat-label>
-                        <input matInput formControlName="AddressLine1" [ngClass]="{ 'is-invalid': Submitted &&
-                    f['AddressLine1'].errors || f['AddressLine1'].touched&& f['AddressLine1'].errors }">
-                        <mat-error
-                            *ngIf="Submitted && f['AddressLine1'].errors|| f['AddressLine1'].touched&& f['AddressLine1'].errors">
-                            Please Select Your AddressLine1</mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 ">
-                    <mat-form-field appearance="fill" class=" field ">
-                        <mat-label class="info "> Address Line2</mat-label>
-                        <input matInput formControlName="AddressLine2" [ngClass]="{ 'is-invalid': Submitted &&
-                    f['AddressLine2'].errors || f['AddressLine2'].touched&& f['AddressLine2'].errors }">
-                    </mat-form-field>
-                </div>
-
-
-                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
-                    <mat-form-field appearance="fill" class="info field ">
-                        <mat-label class="info">Note </mat-label>
-                        <input matInput formControlName="Note" [ngClass]="{ 'is-invalid': Submitted &&
-                f['Note'].errors || f['Note'].touched&& f['Note'].errors }">
-                    </mat-form-field>
-                    <mat-error *ngIf="Submitted && f['Note'].errors|| f['Note'].touched&& f['Note'].errors">
-                        Please Select Your Note</mat-error>
-                </div>
-            </div>
-        </form>
-    </div>
-    </div>
 </div>
+<form (ngSubmit)="onSubmit()" [formGroup]="userForm">
+<div class="container-fulid mx-3 mt-0 pt-0">
+    <div class="row mt-5 d-flex  px-5">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <p class="subtitle"> <b>USER</b></p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 text-end mb-3">
+            <button type="submit" class="btn btnsave fs-6 mx-1 text-white "  routerLink="./../add-student"> SAVE
+            </button>
+            <button class="btn btncancel last4 fs-6  text-white " type="button" routerLink="./../add-student"> CANCEL
+            </button>
+            <!-- <button class="mt-5 mx-5 btncancel  " type="cancel"  color="warn" mat-raised-button (click)="openDialog('0ms', '0ms')"> CANCEL</button> -->
+
+
+        </div>
+    </div>
+    <div class="shadow justify-content-md-center mx-2 mb-5  mt-5 py-3 px-4 bg-body headercard ">
+        <p class="title  mt-2 fs-6">USER INFO</p>
+        <hr class="hr mb-5">
+       
+            <div class="row mt-3  mb-3 ">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2 px-4">
+                    <div class="group">
+                        <input class="inputMaterial" type="text" formControlName="firstName" [(ngModel)]="obj.firstName"
+                            [ngClass]="{'border-danger && is-invalid': Submitted && f['firstName'].errors || f['firstName'].touched&& f['firstName'].errors }"
+                            required>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['firstName'].errors || f['firstName'].touched&& f['firstName'].errors }">First
+                            Name<span class="star">*</span></label>
+                        <span class="error"
+                            *ngIf="Submitted && f['firstName'].errors|| f['firstName'].touched&& f['firstName'].errors">
+                            Please Enter Your FirstName</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2 px-4 ">
+                    <div class="group">
+                        <input class="inputMaterial" type="text" formControlName="lastName" [ngClass]="{ 'border-danger && is-invalid': Submitted && 
+                     f['lastName'].errors || f['lastName'].touched&& f['lastName'].errors }" required>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['lastName'].errors || f['lastName'].touched&& f['lastName'].errors }">Last
+                            Name<span class="star">*</span></label>
+                        <span class="error"
+                            *ngIf="Submitted && f['lastName'].errors|| f['lastName'].touched&& f['lastName'].errors">
+                            Please Enter Your Last Name</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2 px-4 ">
+                    <div class="group">
+                        <input class="inputMaterial" formControlName="emailAddress" [ngClass]="{ 'border-danger && is-invalid': Submitted &&
+                    f['emailAddress'].errors || f['emailAddress'].touched&& f['emailAddress'].errors }" required>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['emailAddress'].errors || f['emailAddress'].touched && f['emailAddress'].errors }">Email<span
+                                class="star">*</span></label>
+                        <span class="error"
+                            *ngIf="Submitted && f['emailAddress'].errors|| f['emailAddress']. dirty && f['emailAddress'].touched && f['emailAddress'].errors">
+                            Please Enter Your emailAddress
+                            <span *ngIf="f['emailAddress'].errors?.['pattern']"> must be valid one</span>
+                        </span>
+                    
+                        
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2 px-4 ">
+                    <div class="group">
+                        <input class="inputMaterial" formControlName="PhoneNo" type="number" [ngClass]="{ 'border-danger && is-invalid': Submitted &&
+                    f['PhoneNo'].errors || f['PhoneNo'].touched&& f['PhoneNo'].errors }" required>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['PhoneNo'].errors || f['PhoneNo'].touched&& f['PhoneNo'].errors  }">PhoneNumber<span
+                                class="star">*</span></label>
+                        <span class="error"
+                            *ngIf="Submitted && f['PhoneNo'].errors || f['PhoneNo'].dirty && f['PhoneNo'].errors">
+                            Please Enter Your PhoneNumber
+                            <span *ngIf="f['PhoneNo'].errors?.['pattern']"> must be 10-digit</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2 px-4 ">
+                    <div class="group">
+                        <select class="inputMaterial" formControlName="CountryId" [ngClass]="{ 'border-danger && is-invalid': Submitted &&
+                f['CountryId'].errors || f['CountryId'].touched&& f['CountryId'].errors }" required>
+                            <option>CountryId</option>
+                            <option *ngFor="let CountryId of country" [value]="CountryId.id">
+                                {{CountryId.name}}
+                            </option>
+
+                        </select>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['CountryId'].errors || f['CountryId'].touched&& f['CountryId'].errors}">Country<span
+                                class="star">*</span></label>
+                        <span class="error"
+                            *ngIf="Submitted && f['CountryId'].errors|| f['CountryId'].touched&& f['CountryId'].errors">
+                            Please Select Your Country</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2 px-4 ">
+                    <div class="group">
+                        <select class="inputMaterial" formControlName="StateId" [ngClass]="{ 'border-danger && is-invalid': Submitted &&
+                    f['StateId'].errors || f['StateId'].touched&& f['StateId'].errors }" required>
+                            <option>State</option>
+                            <option *ngFor="let StateId of state" [value]="StateId.id">
+                                {{StateId.name}}
+                            </option>
+                        </select>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['StateId'].errors || f['StateId'].touched&& f['StateId'].errors}">State<span
+                                class="star">*</span></label>
+                        <span class="error"
+                            *ngIf="Submitted && f['StateId'].errors|| f['StateId'].touched&& f['StateId'].errors">
+                            Please Select Your State</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2  px-4 ">
+                    <div class="group">
+                        <select class="inputMaterial" formControlName="CityId" [ngClass]="{ 'border-danger && is-invalid': Submitted &&
+                        f['CityId'].errors || f['CityId'].touched&& f['CityId'].errors }" required>
+                            <option>City</option>
+                            <option *ngFor="let CityId of cities" [value]="CityId.id">
+                                {{CityId.name}}
+                            </option>
+                        </select>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['CityId'].errors || f['CityId'].touched&& f['CityId'].errors}">City<span
+                                class="star">*</span></label>
+                        <span class="error"
+                            *ngIf="Submitted && f['CityId'].errors|| f['CityId'].touched&& f['CityId'].errors">
+                            Please Select Your State</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2 px-4 ">
+                    <div class="group">
+                        <select class="inputMaterial" formControlName="RoleId" [ngClass]="{ 'border-danger && is-invalid': Submitted &&
+                            f['RoleId'].errors || f['RoleId'].touched&& f['RoleId'].errors }" required>
+                            <option>Role</option>
+                            <option *ngFor="let RoleId of role" [value]="RoleId.id">
+                                {{RoleId.name}}
+                            </option></select>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['RoleId'].errors || f['RoleId'].touched&& f['RoleId'].errors}">Role<span
+                                class="star">*</span></label>
+                        <span class="error"
+                            *ngIf="Submitted && f['RoleId'].errors|| f['RoleId'].touched&& f['RoleId'].errors">
+                            Please Select Your Role</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2 px-4">
+                    <div class="group">
+                        <select class="inputMaterial" formControlName="Status" [ngClass]="{ 'border-danger && is-invalid': Submitted &&
+                            f['Status'].errors || f['Status'].touched&& f['Status'].errors }" required>
+                            <option>Status</option>
+                            <option *ngFor="let Status of Status" [value]="Status.id">
+                                {{Status.name}}
+                            </option>
+                        </select>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['Status'].errors || f['Status'].touched&& f['Status'].errors}">Status<span
+                                class="star">*</span></label>
+
+                        <span class="error"
+                            *ngIf="Submitted && f['Status'].errors|| f['Status'].touched&& f['Status'].errors">
+                            Please Select Your status</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-2 px-4 ">
+                    <div class="group">
+
+                        <input class="inputMaterial" formControlName="AddressLine1" [ngClass]="{ 'border-danger && is-invalid': Submitted &&
+                    f['AddressLine1'].errors || f['AddressLine1'].touched&& f['AddressLine1'].errors }" required>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['AddressLine1'].errors || f['AddressLine1'].touched&& f['AddressLine1'].errors}">AddressLine1<span
+                                class="star">*</span></label>
+                        
+                        <span class="error"
+                            *ngIf="Submitted && f['AddressLine1'].errors|| f['AddressLine1'].touched&& f['AddressLine1'].errors">
+                            Please Select Your AddressLine1</span>
+
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-2 px-4 ">
+                    <div class="group">
+
+                        <input class="inputMaterial" formControlName="AddressLine2" [ngClass]="{ 'border-danger && is-invalid': Submitted &&
+                    f['AddressLine2'].errors || f['AddressLine2'].touched&& f['AddressLine2'].errors }" required>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['AddressLine2'].errors || f['AddressLine2'].touched&& f['AddressLine2'].errors}">AddressLine2<span
+                                class="star">*</span></label>
+
+                        <span class="error"
+                            *ngIf="Submitted && f['AddressLine2'].errors|| f['AddressLine2'].touched&& f['AddressLine2'].errors">
+                            Please Select Your AddressLine2</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2 mb-2 px-4  ">
+                    <div class="group">
+                        <input class="inputMaterial" formControlName="Note" [ngClass]="{ 'border-danger && is-invalid': Submitted &&
+                           f['Note'].errors || f['Note'].touched&& f['Note'].errors }" required>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['Note'].errors || f['Note'].touched&& f['Note'].errors}">Note<span
+                                class="star">*</span></label>
+
+                        <span class="error"
+                            *ngIf="Submitted && f['Note'].errors|| f['Note'].touched&& f['Note'].errors">
+                            Please Enter Your Note</span>
+                            
+                    </div>
+                </div>
+
+            </div>
+       </div>
+</div>
+</form>

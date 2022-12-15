@@ -48,9 +48,7 @@ import {TextFieldModule} from '@angular/cdk/text-field';
 
 
 @NgModule({
-  providers: [
-    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
-  ],
+ 
   declarations: [],
   imports: [
     CommonModule,
