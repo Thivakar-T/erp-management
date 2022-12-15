@@ -3,8 +3,9 @@ import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/fo
 import { FormControl } from '@angular/forms';
 import { Router, ActivatedRoute, Route } from '@angular/router';
 import {ViewEncapsulation } from '@angular/core'; 
-
-
+import { ToastrService } from 'ngx-toastr';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { DialogueboxComponent } from './../dialoguebox/dialoguebox.component';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -49,20 +50,28 @@ role = [
   {id:1, name: 'user'},
   {id:2, name: 'admin'},
 ]
-
   constructor(
     private fb: FormBuilder,
     private route: Router,
     private router: ActivatedRoute,
+    private toastr: ToastrService,
+    public dialog: MatDialog
   ){}
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(DialogueboxComponent, {
+      width: '400px',
+      height:'200px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
+
     ngOnInit(): void {
       this.studentForm = this.fb.group({
-     
-     
         firstName: ['', Validators.required],
         lastName: ['', Validators.required],
-        emailAddress: ['', Validators.required],
-        PhoneNo: ['', Validators.required],
+        email: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+        PhoneNo: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],  
         GenderId: ['', Validators.required],
         CountryId: ['', Validators.required],
         StateId: ['', Validators.required],
@@ -70,9 +79,7 @@ role = [
         RoleId: ['', Validators.required],
         Status: ['', Validators.required],
         AddressLine1: ['', Validators.required],
-        AddressLine2: ['', Validators.required],
-       
-        
+        AddressLine2: ['', Validators.required],  
        
       }) 
     }
@@ -82,7 +89,10 @@ role = [
     }
     onSubmit() {
       this.Submitted = true;
+      if(this.studentForm.value){
+        console.log(this.studentForm.value)
+        localStorage.setItem("value",JSON.stringify(this.studentForm.value))
+        }
+      }
     }
   
-    }
-

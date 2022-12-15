@@ -1,81 +1,93 @@
-<div class="container mt-0 pt-0">
+<div class="container-fulid px-2 mt-0 pt-0">
     <div class="card mx-3 mt-2 headercard shadow">
         <div class="row  mx-2 p-3 ">
             <div class="col-lg-7 col-md-10 mx-0">
-                <h4 class="my-auto headcolr"> <b> Inventory Managament</b></h4>
+                <h4 class="my-auto headtextcolor"> <b>UOM</b></h4>
             </div>
-            <div class="col-lg-5 col-md-10 my-auto text-lg-right text-sm-left text-sm-left">
-                <a class="mx-2 alink" href="#">
+            <div class="col-lg-5 col-md-10 my-auto text-end text-lg-right text-sm-left text-sm-left">
+                <a class="mx-2 headerlink" href="#">
                     <small>Dashboard</small></a>|
-                <a class="mx-2 alink" href="#"> <small> vendor
+                <a class="mx-2 headerlink" href="#"> <small> UOM Info
                     </small></a>|
-                <a class="alink" href="#"><small>Inventory Managament</small></a>
+                <a class="headerlink" href="#"><small>AddUOM</small></a>
             </div>
         </div>
     </div>
-    <div class="row mt-5 d-flex mx-4 px-3">
+</div>
+<div class="container-fulid mx-3 mt-0 pt-0">
+    <form (ngSubmit)="onSubmit()" [formGroup]="uomForm">
+     
+    <div class="row mt-5 d-flex  px-5">
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <p class="last2"> <b>Select Criteria </b></p>
+            <p class="subtitle"> <b>UOM</b></p>
         </div>
+    
+
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 text-end mb-3">
-            <button class="btn btn1 fs-6 mx-2 text-white " type="button" routerLink="./../add-student"> SAVE
+            <button class="btn btnsave fs-6 mx-1 text-white " type="submit"> SAVE
             </button>
-            <button class="btn btn2 last4 fs-6  text-white " type="button" routerLink="./../add-student"> CANCEL
+
+            <button class="btn btncancel  fs-6  text-white " type="button"> CANCEL
             </button>
         </div>
     </div>
-    <div class="card shadow mx-3 headercard">
-        <div class="col-12 mx-2">
-            <h5 class="my-3 headcolr" style="font-weight: 400;">Inventory Managament</h5>
 
-        </div>
-        <div class="mx-3">
-            <form [formGroup]="formpage" (ngSubmit)="onsubmit()">
-                <div class="row mx-3 my-3">
-                    <div class="row mt-3">
+        <div class="shadow justify-content-md-center mx-2 mb-5  mt-5 py-3 px-4 bg-body headercard ">
+            <p class="title   mt-2 fs-6">UOM INFO</p>
+            <hr class="hr mb-5">
 
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-                            <mat-form-field appearance="fill" class="example-full-width field">
-                                <mat-label class="info">Name</mat-label>
-                                <input matInput formControlName="Name" required
-                                    [ngClass]="{ 'is-invalid': Submitted && f['Name'].errors || f['Name'].touched&& f['Name'].errors }">
-                                <mat-error *ngIf="Submitted && f['Name'].errors|| f['Name'].touched&& f['Name'].errors">
-                                    Please Enter Your Name</mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-                            <mat-form-field appearance="fill" class="example-full-width field">
-                                <mat-label class="info"> Description</mat-label>
-                                <input matInput formControlName="Description" [ngClass]="{ 'is-invalid': Submitted &&
-                             f['Description'].errors || f['Description'].touched&& f['Description'].errors }">
-                                <mat-error
-                                    *ngIf="Submitted && f['Description'].errors|| f['Description'].touched&& f['Description'].errors">
-                                    Please Enter Your Description</mat-error>
-                            </mat-form-field>
-                        </div>
-
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-                            <mat-form-field appearance="fill" class=" field ">
-                                <mat-label class="info  ">Status</mat-label>
-                                <mat-select formControlName="Status" [ngClass]="{ 'is-invalid': Submitted &&
-                                    f['Status'].errors || f['Status'].touched&& f['Status'].errors }">
-                                    <mat-option>Status</mat-option>
-                                    <mat-option *ngFor="let Status of status" [value]="Status">
-                                        {{Status}}
-                                    </mat-option>
-                                </mat-select>
-                                <mat-error
-                                    *ngIf="Submitted && f['Status'].errors|| f['Status'].touched&& f['Status'].errors">
-                                    Please Select Your status</mat-error>
-                            </mat-form-field>
-                        </div>
+            <div class="row mt-3  mb-3 ">
 
 
-
-
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2 px-4">
+                    <div class="group">
+                        <input class="inputMaterial" type="text" formControlName="Name" [(ngModel)]="obj.Name"
+                            [ngClass]="{'border-danger && is-invalid': Submitted && f['Name'].errors || f['Name'].touched&& f['Name'].errors }"
+                            required>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['Name'].errors || f['Name'].touched&& f['Name'].errors }">
+                            Name<span class="star">*</span></label>
+                        <span class="error"
+                            *ngIf="Submitted && f['Name'].errors|| f['Name'].touched&& f['Name'].errors">
+                            Please Enter Your Name</span>
                     </div>
                 </div>
-            </form>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2 px-4 ">
+                    <div class="group">
+                        <input class="inputMaterial" type="text" formControlName="Description" [ngClass]="{ 'border-danger && is-invalid': Submitted && 
+                     f['Description'].errors || f['Description'].touched&& f['Description'].errors }" required>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['Description'].errors || f['Description'].touched&& f['Description'].errors }">Description
+                            <span class="star">*</span></label>
+                        <span class="error"
+                            *ngIf="Submitted && f['Description'].errors|| f['Description'].touched&& f['Description'].errors">
+                            Please Enter Your Description</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2 px-4 ">
+
+                    <div class="group">
+                        <select class="inputMaterial" formControlName="Status" [ngClass]="{ 'border-danger && is-invalid': Submitted &&
+                            f['Status'].errors || f['Status'].touched&& f['Status'].errors }" required>
+                            <option>Status</option>
+                            <option *ngFor="let Status of Status" [value]="Status.id">
+                                {{Status.name}}
+                            </option>
+                        </select>
+                        <label
+                            [ngClass]="{'text-danger && is-invalid': Submitted && f['Status'].errors || f['Status'].touched&& f['Status'].errors}">Status<span
+                                class="star">*</span></label>
+
+                        <span class="error"
+                            *ngIf="Submitted && f['Status'].errors|| f['Status'].touched&& f['Status'].errors">
+                            Please Select Your status</span>
+                    </div>
+
+                </div>
+
+
+
+            </div>
         </div>
-    </div>
+    </form>
 </div>
