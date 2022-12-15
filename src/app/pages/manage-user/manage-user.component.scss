@@ -1,5 +1,5 @@
 .data-table {
-    width: 80%;
+    width: 97%;
     margin: 20px auto;
   }
   
@@ -14,4 +14,57 @@
  }
  .headcolr{
     color: rgb(87,42,159);
+ }
+
+ hr{
+  color: black;
+ }
+
+.group 			  { 
+   position:relative; 
+   margin-bottom: 35px; 
+
+ }
+ 
+ .inputMaterial	{
+   
+   padding:10px 10px 10px 5px;
+   display:block;
+   width:100%;
+   border:none;
+   border-bottom:1px solid #949297;
+ }
+ 
+ .inputMaterial:focus { outline:none;
+ border-bottom:1px solid blue;}
+ 
+ .inputMaterial:focus ~ label, .inputMaterial:valid ~ label 		{
+   top:-10px;
+   font-size:10px;
+   color: rgb(87, 42, 159);
+ }
+ label {
+
+  font-size:14px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:7px;
+  top:20px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+  color: rgb(87, 42, 159);
+}
+.btn1{
+  background-color: rgb(51, 20, 95);
+
+}
+
+.last2{
+  font-size:17px;
+  color: rgb(87, 42, 159);
+ }
+ .deleteicon{
+  color: red;
  }

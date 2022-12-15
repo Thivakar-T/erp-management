@@ -65,7 +65,7 @@
       rgb(235, 240, 240) 0%,
       rgb(232, 228, 233) 90%);
   /* background-image: radial-gradient(circle farthest-corner at 7.2% 13.6%, #25f9f5 0%, #0846da 90%); */
-  height: 100vh;
+  height: 100%;
   left: 260px;
   width: calc(100% - 260px);
   transition: all 0.5s ease;
@@ -154,7 +154,7 @@
 
 .sidebar .nav-links>li {
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
 
 .sidebar .nav-links li:hover {
@@ -357,18 +357,25 @@
   .sidebar.sidebar-close .nav-links li .sub-menu {
     display: none;
   }
+  
 }
 
 
 :host {
   ::ng-deep {
-
     .sidebar[_ngcontent-uqp-c341] .nav-links[_ngcontent-uqp-c341] {
-      height: 100%;
-      
+      height: 100%;    
       padding-left: 0;
       padding-bottom: 150px;
       overflow: auto;
   }
+  }
+}
+@media only screen and (max-width: 425px){
+  .content {
+    overflow: hidden;
+  }
+  .sidebar{
+    width: 100%;
   }
 }

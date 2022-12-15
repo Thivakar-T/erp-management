@@ -9,6 +9,8 @@
                         <input type="checkbox" id="checkbox-hamburger-menu" [(ngModel)]="openSidebar" />
                         <label class="label-hamburger-menu" for="checkbox-hamburger-menu">
                             <i class="fa fa-cart-plus fs-4 me-4" style="color: white;" aria-hidden="true"></i>
+                            <!-- <img src=" https://img.freepik.com/premium-vector/shopping-cart-logo-design-vector-modern-shopping-cart-logo-template_472998-93.jpg?w=2000" alt=""  style="width: 30px; height: 30px;"> -->
+                            
                         </label>
                     </div>
                 </div>
@@ -25,13 +27,13 @@
 
     <ul class="nav-links" id="nav-links">
         <li *ngFor="let item of menuSidebar" #itemEl routerLinkActive="active">
-            <div *ngIf="item.sub_menu.length == 0" class="dropdown-title">
+            <div  class="dropdown-title">
                 <a [routerLink]="[item.link]">
                     <i [class]="item.icon"></i>
                     <span class="link_name">{{item.link_name}}</span>
                 </a>
             </div>
-            <div *ngIf="item.sub_menu.length > 0" class="dropdown-title" (click)="showSubmenu(itemEl)">
+            <!-- <div *ngIf="item.sub_menu.length > 0" class="dropdown-title" (click)="showSubmenu(itemEl)">
                 <a>
                     <i [class]="item.icon"></i>
                     <span class="link_name">{{item.link_name}}</span>
@@ -43,7 +45,7 @@
                 <li *ngFor="let item_sub of item.sub_menu" routerLinkActive="active">
                     <a [routerLink]="[item_sub.link]">{{item_sub.link_name}}</a>
                 </li>
-            </ul>
+            </ul> -->
         </li>
     </ul>
 </div>
@@ -59,7 +61,7 @@
             </label>
         </div>
     </div> -->
-        <div>
+        <div class="content">
             <router-outlet></router-outlet>
         </div>
     </div>
