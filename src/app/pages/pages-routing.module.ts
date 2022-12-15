@@ -14,7 +14,7 @@ const routes: Routes = [
   
   children: [
     { path:"profile", component : ProfileComponent },
-    {path:"UOM",component:UOMComponent},
+    {path:"uom",component:UOMComponent},
     { path:"manageuser", component : ManageUserComponent },
     { path:"add-user", component : AddUserComponent },
     {path:"role",component:RoleComponent},
