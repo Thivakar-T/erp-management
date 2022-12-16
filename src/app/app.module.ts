@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { MaterialsModule } from 'src/materials/materials.module';
-import { CardComponent } from './card/card.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -22,7 +21,6 @@ import { LayoutModule } from 'src/layout/layout.module';
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
     InvoiceComponent,
   ],
   imports: [
