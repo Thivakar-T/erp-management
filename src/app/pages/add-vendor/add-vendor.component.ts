@@ -3,10 +3,7 @@ import { FormBuilder, FormGroup, Validator, Validators,AbstractControl } from '@
 import { Router,ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
 
-interface cate {
-  value: string;
-  viewValue: string;
-}
+
 @Component({
   selector: 'app-add-vendor',
   templateUrl: './add-vendor.component.html',
@@ -52,8 +49,6 @@ constructor(private fb: FormBuilder,
   
   ngOnInit(): void {
     this.studentForm = this.fb.group({
-     
-     
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       emailAddress: ['',[Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
@@ -66,9 +61,6 @@ constructor(private fb: FormBuilder,
       AddressLine1: ['', Validators.required],
       AddressLine2: ['', Validators.required],
       note: ['', Validators.required],
-     
-      
-     
     }) 
   }
   

@@ -7,15 +7,15 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'erp-management';
+  title = 'Shopping-Cart';
 
 constructor(private toastr: ToastrService){}
 
   ngOnInit(): void {
-    this. showSuccess()
+    // this. showSuccess()
   }
 
-  showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
-  }
+  // showSuccess() {
+  //   this.toastr.success('Hello world!', 'Toastr fun!');
+  // }
 }

@@ -1,78 +1,79 @@
-<div class="container mt-0 pt-0">
+<div class="container px-2 mt-0 vh-100 pt-0 overflow-hidden">
   <div class="card mx-3 mt-2 headercard shadow">
     <div class="row  mx-2 p-3 ">
       <div class="col-lg-7 col-md-10 mx-0">
-        <h4 class="my-auto headcolr"><b>ROLE</b></h4>
+        <h4 class="my-auto headtextcolor"> <b>ROLE</b></h4>
       </div>
-      <div class="col-lg-5 col-md-10 my-auto text-lg-right text-sm-left text-sm-left">
-        <a class="mx-2 alink" href="#">
+      <div class="col-lg-5 col-md-10 my-auto  text-lg-end text-sm-start ">
+        <a class="mx-2 headerlink" href="#">
           <small>Dashboard</small></a>|
-        <a class="mx-2 alink" href="#"><small>role
+        <a class="mx-2 headerlink" href="#"> <small> Role
           </small></a>|
-        <a class="alink" href="#"><small>Role Managament</small></a>
+        <a class="headerlink" href="#"><small>Role</small></a>
       </div>
     </div>
   </div>
-  <div class="row mt-5 d-flex mx-4 px-3">
-    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-      <p class="last2"> <b>Role </b></p>
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 text-end mb-3">
-      <button class="btn btn1 fs-6 mx-2 text-white " type="button" routerLink="./../add-student"> SAVE
-      </button>
-      <button class="btn btn2 last4 fs-6  text-white " type="button" routerLink="./../add-student"> CANCEL
-      </button>
-    </div>
-  </div>
 
-  <div class="card shadow mx-3 headercard">
-    <div class="col-12 mx-2">
-      <h5 class="my-3 headcolr" style="font-weight: 400;">Role</h5>
+  <form (ngSubmit)="onSubmit()" [formGroup]="roleform">
 
-    </div>
-
-    <div class="mx-3">
-      <form [formGroup]="roleForm" (ngSubmit)="onSubmit()">
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-            <mat-form-field appearance="fill" class="example-full-width field">
-              <mat-label class="info">Name</mat-label>
-              <input matInput formControlName="name" required
-                [ngClass]="{ 'is-invalid': Submitted && f['name'].errors || f['name'].touched&& f['name'].errors }">
-              <mat-error *ngIf="Submitted && f['name'].errors|| f['name'].touched&& f['name'].errors">
-                Please Enter Your Name</mat-error>
-            </mat-form-field>
-          </div>
-          <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-            <mat-form-field appearance="fill" class="example-full-width field">
-              <mat-label class="info">Description</mat-label>
-              <input matInput formControlName="description" required
-                [ngClass]="{ 'is-invalid': Submitted && f['description'].errors || f['description'].touched&& f['description'].errors }">
-              <mat-error
-                *ngIf="Submitted && f['description'].errors|| f['description'].touched&& f['description'].errors">
-                Please Enter Your Description</mat-error>
-            </mat-form-field>
-          </div>
-          <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-4 ">
-            <mat-form-field appearance="fill" class="example-full-width field">
-              <mat-label class="info">Status</mat-label>
-              <input matInput formControlName="status" required
-                [ngClass]="{ 'is-invalid': Submitted && f['status'].errors || f['status'].touched&& f['status'].errors }">
-              <mat-error *ngIf="Submitted && f['status'].errors|| f['status'].touched&& f['status'].errors">
-                Please Enter Your Status</mat-error>
-            </mat-form-field>
-          </div>
-        </div>
-
-      </form>
-      <div class="col-sm-23 col-md-13 col-lg-13 col-xl-14 text-end mb-5">
-        <button class="btn btn3 fs-6 mx-2 text-white" type="button" routerLink="./../add-student">SUBMIT
+    <div class="row mt-5 d-flex  px-5">
+      <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <p class="subtitle mt-2"> <b>ROLE</b></p>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 text-lg-end text-sm-start text-md-end mb-3">
+        <button class="btn btnsave fs-6 mx-1 text-white mt-2" type="submit"> SAVE
+        </button>
+        <button class="btn btncancel  fs-6  text-white mt-2" type="button"> CANCEL
         </button>
       </div>
     </div>
-  </div>
+    <div class="shadow justify-content-md-center mx-2 mb-5  mt-2 py-3 px-4 bg-body headercard ">
+      <p class="title   mt-2 fs-6">UOM INFO</p>
+      <hr class="hr mb-5">
+      <div class="row mt-3  mb-3 ">
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mt-2 px-4">
+          <div class="group">
+            <input class="inputMaterial" type="text" formControlName="Name" [(ngModel)]="obj.Name"
+              [ngClass]="{'border-danger && is-invalid': Submitted && f['Name'].errors || f['Name'].touched&& f['Name'].errors }"
+              required>
+            <label class="inputlabel"
+              [ngClass]="{'text-danger && is-invalid': Submitted && f['Name'].errors || f['Name'].touched&& f['Name'].errors }">
+              Name<span class="star">*</span></label>
+            <span class="error" *ngIf="Submitted && f['Name'].errors|| f['Name'].touched&& f['Name'].errors">
+              Please Enter Your Name</span>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mt-2 px-4 ">
+          <div class="group">
+            <input class="inputMaterial" type="text" formControlName="Description" [ngClass]="{ 'border-danger && is-invalid': Submitted && 
+                   f['Description'].errors || f['Description'].touched&& f['Description'].errors }" required>
+            <label class="inputlabel"
+              [ngClass]="{'text-danger && is-invalid': Submitted && f['Description'].errors || f['Description'].touched&& f['Description'].errors }">Description
+              <span class="star">*</span></label>
+            <span class="error"
+              *ngIf="Submitted && f['Description'].errors|| f['Description'].touched&& f['Description'].errors">
+              Please Enter Your Description</span>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mt-2 px-4 ">
+
+          <div class="group">
+            <select class="inputMaterial" formControlName="Status" [ngClass]="{ 'border-danger && is-invalid': Submitted &&
+                          f['Status'].errors || f['Status'].touched&& f['Status'].errors }" required>
+              <option>Status</option>
+              <option *ngFor="let Status of Status" [value]="Status.id">
+                {{Status.name}}
+              </option>
+            </select>
+            <label class="inputlabel"
+              [ngClass]="{'text-danger && is-invalid': Submitted && f['Status'].errors || f['Status'].touched&& f['Status'].errors}">Status<span
+                class="star">*</span></label>
+
+            <span class="error" *ngIf="Submitted && f['Status'].errors|| f['Status'].touched&& f['Status'].errors">
+              Please Select Your status</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
-
-
-
-

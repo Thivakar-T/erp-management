@@ -13,7 +13,6 @@ import { MaterialsModule } from 'src/materials/materials.module';
 import { MaterialsRoutingModule } from 'src/materials/materials-routing.module';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { LayoutModule } from 'src/layout/layout.module';
-import { DialogueBoxComponent } from './dialogue-box/dialogue-box.component';
 
 
 @NgModule({
@@ -26,7 +25,6 @@ import { DialogueBoxComponent } from './dialogue-box/dialogue-box.component';
     ManageUserComponent,
     RoleComponent,
     AddVendorComponent,
-    DialogueBoxComponent,
    
   ],
   imports: [

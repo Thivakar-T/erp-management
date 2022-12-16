@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-uom',
   templateUrl: './uom.component.html',
@@ -18,8 +17,6 @@ export class UOMComponent implements OnInit {
     { id: 2, name: 'Inactive' },
 
   ];
-
-
   constructor(private fb: FormBuilder,
     private route: Router,
     private router: ActivatedRoute) { }
@@ -38,8 +35,6 @@ export class UOMComponent implements OnInit {
   onSubmit() {
     this.Submitted = true;
   }
-
-
 }
 
 

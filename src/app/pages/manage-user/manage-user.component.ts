@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router, ActivatedRoute, Route } from '@angular/router';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 
 
@@ -12,7 +11,6 @@ export interface PeriodicElement {
   phone: number;
   status: string;
   role: string;
-
 }
 
 const ELEMENT_DATA: any = [
@@ -40,14 +38,14 @@ export class ManageUserComponent implements OnInit {
   userform!: FormGroup;
   public submitted = false;
   array: any
-  loopstatus:any
-  loopname:any;
-  obj: any={}
-  result: any =[{}]
+  loopstatus: any
+  loopname: any;
+  obj: any = {}
+  result: any = [{}]
   status = [
-      { id: 1, status: 'Active' },
-      { id: 1, status: 'Inactive' }
-    ]
+    { id: 1, status: 'Active' },
+    { id: 1, status: 'Inactive' }
+  ]
   displayedColumns: string[] = ['position', 'name', 'email', 'phone', 'status', 'role', 'action'];
   dataSource = new MatTableDataSource<any>(ELEMENT_DATA);
 
@@ -60,8 +58,8 @@ export class ManageUserComponent implements OnInit {
       status: [''],
       name: [''],
     });
-    this.obj.name=""
-    this.obj.status=""   
+    this.obj.name = ""
+    this.obj.status = ""
     this.array = this.dataSource.filteredData;
     console.log(this.array);
   }
@@ -71,49 +69,49 @@ export class ManageUserComponent implements OnInit {
   }
 
   applyFilter(event: any) {
-    const dataArray=this.array.filter((res:any)=>{
+    const dataArray = this.array.filter((res: any) => {
       console.log(res)
-     return res.name===event
+      return res.name === event
     })
     this.dataSource = new MatTableDataSource<any>(dataArray);
-     console.log(this.dataSource)
-    this.obj.name= '' ;
-    this.obj.status= '' ;    
+    console.log(this.dataSource)
+    this.obj.name = '';
+    this.obj.status = '';
   }
 
   applyFilterstatus(event: any) {
     console.log(event);
-    const dataArray=this.array.filter((res:any)=>{
-     return res.status===event
+    const dataArray = this.array.filter((res: any) => {
+      return res.status === event
     })
     this.dataSource = new MatTableDataSource<any>(dataArray);
-    this.obj.name= '' ;
-    this.obj.status= '' ; 
+    this.obj.name = '';
+    this.obj.status = '';
   }
-   totalFilter(data: any,event:any) {
-    console.log(data,event);
-    const dataArray=this.array.filter((res:any)=>{
+  totalFilter(data: any, event: any) {
+    console.log(data, event);
+    const dataArray = this.array.filter((res: any) => {
       console.log(res)
-     return res.status===data && res.name===event
+      return res.status === data && res.name === event
     })
     this.dataSource = new MatTableDataSource<any>(dataArray);
-    this.obj.name= '' ;
-    this.obj.status= '' ;
-   }
+    this.obj.name = '';
+    this.obj.status = '';
+  }
 
 
   search() {
     console.log(this.userform.value)
     console.log(this.userform.value.status);
 
-    if (this.userform.value.status != '' && this.userform.value.name =='') {
+    if (this.userform.value.status != '' && this.userform.value.name == '') {
       this.applyFilterstatus(this.userform.value.status);
-    } else if(this.userform.value.name != '' && this.userform.value.status =='') {
+    } else if (this.userform.value.name != '' && this.userform.value.status == '') {
       this.applyFilter(this.userform.value.name);
-    }else if(this.userform.value.name != ''  
-    && this.userform.value.status != '' ){
-      this.totalFilter(this.userform.value.status,this.userform.value.name);
-    }else{
+    } else if (this.userform.value.name != ''
+      && this.userform.value.status != '') {
+      this.totalFilter(this.userform.value.status, this.userform.value.name);
+    } else {
       this.dataSource
     }
   }

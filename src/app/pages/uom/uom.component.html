@@ -1,50 +1,41 @@
-<div class="container-fulid px-2 mt-0 pt-0">
+<div class="container-fulid px-2 mt-0 vh-100 pt-0 overflow-hidden">
     <div class="card mx-3 mt-2 headercard shadow">
         <div class="row  mx-2 p-3 ">
-            <div class="col-lg-7 col-md-10 mx-0">
+            <div class="col-lg-5 col-md-10 mx-0">
                 <h4 class="my-auto headtextcolor"> <b>UOM</b></h4>
             </div>
-            <div class="col-lg-5 col-md-10 my-auto text-end text-lg-right text-sm-left text-sm-left">
+            <div class="col-lg-7 col-md-10 my-auto text-lg-end text-sm-start ">
                 <a class="mx-2 headerlink" href="#">
                     <small>Dashboard</small></a>|
-                <a class="mx-2 headerlink" href="#"> <small> UOM Info
+                <a class="mx-2 headerlink" href="#"> <small> uom Info
                     </small></a>|
-                <a class="headerlink" href="#"><small>AddUOM</small></a>
+                <a class="headerlink mx-2" href="#"><small>Adduom</small></a>
             </div>
         </div>
     </div>
-</div>
-<div class="container-fulid mx-3 mt-0 pt-0">
     <form (ngSubmit)="onSubmit()" [formGroup]="uomForm">
-     
     <div class="row mt-5 d-flex  px-5">
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <p class="subtitle"> <b>UOM</b></p>
+            <p class="subtitle mt-2"> <b>UOM</b></p>
         </div>
-    
-
-        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 text-end mb-3">
-            <button class="btn btnsave fs-6 mx-1 text-white " type="submit"> SAVE
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 text-lg-end text-sm-start text-md-end mb-3">
+            <button class="btn btnsave fs-6 mx-1 mt-2 text-white " type="submit"> SAVE
             </button>
-
-            <button class="btn btncancel  fs-6  text-white " type="button"> CANCEL
+            <button class="btn btncancel  fs-6 mt-2 text-white " type="button"> CANCEL
             </button>
         </div>
     </div>
-
-        <div class="shadow justify-content-md-center mx-2 mb-5  mt-5 py-3 px-4 bg-body headercard ">
+        <div class="shadow justify-content-md-center mx-4 mb-5  mt-2
+         py-3 px-4 bg-body headercard ">
             <p class="title   mt-2 fs-6">UOM INFO</p>
             <hr class="hr mb-5">
-
             <div class="row mt-3  mb-3 ">
-
-
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2 px-4">
+                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mt-2 px-4">
                     <div class="group">
                         <input class="inputMaterial" type="text" formControlName="Name" [(ngModel)]="obj.Name"
                             [ngClass]="{'border-danger && is-invalid': Submitted && f['Name'].errors || f['Name'].touched&& f['Name'].errors }"
                             required>
-                        <label
+                        <label class="inputlabel"
                             [ngClass]="{'text-danger && is-invalid': Submitted && f['Name'].errors || f['Name'].touched&& f['Name'].errors }">
                             Name<span class="star">*</span></label>
                         <span class="error"
@@ -52,11 +43,11 @@
                             Please Enter Your Name</span>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2 px-4 ">
+                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mt-2 px-4 ">
                     <div class="group">
                         <input class="inputMaterial" type="text" formControlName="Description" [ngClass]="{ 'border-danger && is-invalid': Submitted && 
                      f['Description'].errors || f['Description'].touched&& f['Description'].errors }" required>
-                        <label
+                        <label class="inputlabel"
                             [ngClass]="{'text-danger && is-invalid': Submitted && f['Description'].errors || f['Description'].touched&& f['Description'].errors }">Description
                             <span class="star">*</span></label>
                         <span class="error"
@@ -64,8 +55,7 @@
                             Please Enter Your Description</span>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mt-2 px-4 ">
-
+                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mt-2 px-4 ">
                     <div class="group">
                         <select class="inputMaterial" formControlName="Status" [ngClass]="{ 'border-danger && is-invalid': Submitted &&
                             f['Status'].errors || f['Status'].touched&& f['Status'].errors }" required>
@@ -74,19 +64,14 @@
                                 {{Status.name}}
                             </option>
                         </select>
-                        <label
+                        <label class="inputlabel"
                             [ngClass]="{'text-danger && is-invalid': Submitted && f['Status'].errors || f['Status'].touched&& f['Status'].errors}">Status<span
                                 class="star">*</span></label>
-
                         <span class="error"
                             *ngIf="Submitted && f['Status'].errors|| f['Status'].touched&& f['Status'].errors">
                             Please Select Your status</span>
                     </div>
-
                 </div>
-
-
-
             </div>
         </div>
     </form>

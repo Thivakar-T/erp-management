@@ -8,9 +8,8 @@
                     <div class="hamburger-menu">
                         <input type="checkbox" id="checkbox-hamburger-menu" [(ngModel)]="openSidebar" />
                         <label class="label-hamburger-menu" for="checkbox-hamburger-menu">
-                            <i class="fa fa-cart-plus fs-4 me-4" style="color: white;" aria-hidden="true"></i>
-                            <!-- <img src=" https://img.freepik.com/premium-vector/shopping-cart-logo-design-vector-modern-shopping-cart-logo-template_472998-93.jpg?w=2000" alt=""  style="width: 30px; height: 30px;"> -->
-                            
+                            <!-- <i class="fa fa-cart-plus fs-4 me-4" style="color: white;" aria-hidden="true"></i> -->
+                            <i class="fa fa-bars fs-4 me-3 text-white" aria-hidden="true"></i>
                         </label>
                     </div>
                 </div>
@@ -18,16 +17,12 @@
                     <h5 class="py-2 text-bold text-white" style="margin-left: -18%;">
                         Shopping </h5>
                 </div>
-
             </div>
         </div>
-
     </div>
-
-
     <ul class="nav-links" id="nav-links">
         <li *ngFor="let item of menuSidebar" #itemEl routerLinkActive="active">
-            <div  class="dropdown-title">
+            <div class="dropdown-title">
                 <a [routerLink]="[item.link]">
                     <i [class]="item.icon"></i>
                     <span class="link_name">{{item.link_name}}</span>
@@ -50,7 +45,7 @@
     </ul>
 </div>
 <section class="home-section pt-2">
-    <div class="pt-0">
+    <!-- <div class="pt-0"> -->
         <!-- <div class="home-header pt-0">
         <div class="hamburger-menu">
             <input type="checkbox" id="checkbox-hamburger-menu" [(ngModel)]="openSidebar" />
@@ -61,8 +56,8 @@
             </label>
         </div>
     </div> -->
-        <div class="content">
-            <router-outlet></router-outlet>
+        <div class="content bg-light ">
+            <router-outlet ></router-outlet>
         </div>
-    </div>
+    <!-- </div> -->
 </section>

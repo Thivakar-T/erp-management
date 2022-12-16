@@ -11,7 +11,6 @@ import { DialogueboxComponent } from './dialoguebox/dialoguebox.component';
 
 const routes: Routes = [
   {path:"dashboard",component:DashboardComponent,
-  
   children: [
     { path:"profile", component : ProfileComponent },
     {path:"uom",component:UOMComponent},

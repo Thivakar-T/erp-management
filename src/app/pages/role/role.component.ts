@@ -3,65 +3,38 @@ import { FormBuilder, FormGroup, Validator, Validators,AbstractControl } from '@
 import { Router,ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
 
-interface Name {
-  value: string;
-  viewValue: string;
-}
-interface Description {
-  value: string;
-  viewValue: string;
-}
-interface Status {
-  value: string;
-  viewValue: string;
-}
-
-
-
 @Component({
   selector: 'app-role',
   templateUrl: './role.component.html',
   styleUrls: ['./role.component.scss']
-
 })
 
 export class RoleComponent {
-  roleForm!: FormGroup;
-  public Submitted = false;
-  roleobj: any = {};
-  name: any
-  description: any
-  status:any
+  roleform!: FormGroup;
+ Submitted = false;
+  obj: any = {};
 
+  Status = [
+    { id: 1, name: 'Active' },
+    { id: 2, name: 'Inactive' },
 
-  constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private route: ActivatedRoute,
-  ){}
+  ];
+  constructor(private fb: FormBuilder,
+    private route: Router,
+    private router: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.roleForm = this.fb.group({
-      name: ['', Validators.required],
-      description: ['', Validators.required],
-      status:['', Validators.required]
-
+    this.roleform = this.fb.group({
+      Name: ['', Validators.required],
+      Description: ['', Validators.required],
+      Status: ['', Validators.required]
     })
-
-
   }
 
-get f(): { [key: string]: AbstractControl } {
-  return this.roleForm.controls;
-}
-onSubmit() {
-  console.log(this.roleForm.value);
-  this.Submitted = true;
-
-
-
-
-}
-
-
+  get f(): { [key: string]: AbstractControl } {
+    return this.roleform.controls;
+  }
+  onSubmit() {
+    this.Submitted = true;
+  }
 }
