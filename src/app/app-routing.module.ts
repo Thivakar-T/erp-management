@@ -8,7 +8,7 @@ import { TableComponent } from './table/table.component';
 
 
 const routes: Routes = [
-  {path:"",component:CardComponent},
+  {path:"",component: LoginComponent},
   {path:"card",component:CardComponent},
   {path:"DialogDialogAnimationsExampleDialog",component: DialogDialogAnimationsExampleDialogComponent},
   {path:"login",component: LoginComponent},
