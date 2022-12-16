@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:"",component:CardComponent},
   {path:"card",component:CardComponent},
   {path:"DialogDialogAnimationsExampleDialog",component: DialogDialogAnimationsExampleDialogComponent},
-  {path:"",component: LoginComponent},
+  {path:"login",component: LoginComponent},
   {path:"invoice",component:InvoiceComponent },
   {path:"table",component:TableComponent}
 
