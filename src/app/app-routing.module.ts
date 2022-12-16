@@ -6,9 +6,10 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { SildebarComponent } from 'src/layout/sildebar/sildebar.component';
 
 const routes: Routes = [
-  {path:"",component:CardComponent},
+  {path:"",component: LoginComponent},
   {path:"card",component:CardComponent},
   {path:"",component: LoginComponent},
+  {path:"login",component: LoginComponent},
   {path:"invoice",component:InvoiceComponent },
   {path:"side",component:SildebarComponent },
 ];
